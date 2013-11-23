@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Deploying the Pivotal CF Installation Virtual Machine</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+
+		   <div id="header-1">
+				<div id="header-main" class="Headerlogo">		
+			<table style="width:100%; background-color: #01786E; font-color: #FFFFFF ">
+			<tr></tr>
+			<tr>
+			<td height="75" width=10%></td>			
+			<td height="75">
+			<div style="width:50%;text-align: center;">
+			<img src="images/logo.png" align="middle"></div>
+			</td>
+			<td height="75" width=25%>
+			</td>
+			<td height="75"><div style="width: 50%;text-align: right; font-size: x-large; font-color: #FFFFFF">Pivotal AX</div>
+			</td>
+			</tr>
+			</table>
+			</div>
+			</div>		
+
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Deploying the Pivotal CF Installation Virtual Machine
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Nov 22, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <p>Before starting the steps in this section, complete the steps in <a href="ConfiguringthevSphereEnvironment.html">Configuring the vSphere Environment</a>.</p><p>In this section, you deploy a VMware OVF template to create the Pivotal CF virtual machine. This virtual machine runs the Pivotal CF Installer that you will use to provision the virtual machines for Pivotal AX and to install Pivotal AX software. </p><ol><li>Select the <strong>Inventory &gt; Hosts and Clusters</strong> view.</li><li>Select (what?? datacenter? templates folder?  (jack is checking w/ tempest team)  (datacenter, I think) I removed the previous step to create templates folder, </li><li>Click <strong>File</strong> &gt; <strong>Deploy OVF template</strong>.</li><li>Click the <strong>Browse</strong> button to open a file browser.</li><li>Browse to the ova template you received with your Pivotal AX software and click <strong>Next</strong>.</li><li>Verify the OVF template details and click <strong>Next</strong>.</li><li>Accept the license agreement and click <strong>Next</strong>.<br />The <strong>Name and Location</strong> screen displays.  </li><li> Select your datacenter. </li><li>Enter a name for the virtual machine, such as Pivotal CF.<br />The <strong>Host/Cluster</strong> screen displays.</li><li>Select the cluster you created.<br />The <strong>Specific Host</strong> screen displays.  </li><li>Select the ESXi host in this cluster. <br />The <strong>Disk Format</strong> screen displays and shows the name of the datastore you created.</li><li>Select <strong>Thick Provision Lazy Zero</strong> and click <strong>Next</strong>.<br />The <strong>Network Mapping</strong> screen displays.  </li><li>Select a destination network and click <strong>Next</strong>. If you have defined a vlan or other networking,  select that networking destination. Otherwise, select the default, <strong>VM Network</strong>. <br />The <strong>Properties</strong> screen displays. </li><li>Enter the <strong>IP Address</strong>, <strong>Netmask, </strong> <strong>Default Gateway</strong>, and <strong>DNS</strong> fields with the appropriate entries for your networking environment.</li><li>Enter and confirm the <strong>Admin Password</strong> for this virtual machine and click <strong>Next</strong>.<br />The username for this VM is <strong>tempest</strong> ??really?. Use this username and the Admin password for SSH access to the Pivotal CF Installer virtual machine. <br />The <strong>Ready to Complete</strong> screen displays.</li><li><p>Select <strong>Power on after deployment </strong>and click <strong>Finish</strong>.<br />vCenter begins to deploy and start the virtual machine. This may take up to 15 minutes to complete.</p></li><li>Continue with the installation procedure using the <strong>Pivotal CF Installer</strong>.<p>See <a href="ConfiguringthePivotalCFInstallertoInstallPivotalAX.html">Configuring the Pivotal CF Installer to Install Pivotal AX</a>.</p></li></ol>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783562.png">image2013-10-1 10:42:0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783563.png">image2013-10-1 11:8:21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783564.png">image2013-10-1 11:8:22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783565.png">image2013-10-1 11:14:30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783566.png">image2013-10-1 11:15:6.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+		<div id="footer-1">
+		<table style="width:100%; background-color: #01786E">
+		<tr></tr>
+			<tr><td height="50" width=10%></td>
+			<td height="50 width:75%;text-align: left; font-size: small; font color: #FFFFFF">			
+		<div id="footer-links">
+				<a href="http://www.gopivotal.com/about-pivotal/contact-us">Contact Us</a>
+                |
+                <a href="http://www.gopivotal.com/privacy-policy">Private Policy</a> 
+                |
+                <a href="http://www.gopivotal.com/terms-of-use">Terms of Use</a></div>
+			</td>
+			<td height="50" width=25%>
+			</td>
+			<td height="50"><div style="width: 75%;text-align: left; font-size: small; font color: #FFFFFF;">2013 GoPivotal, Inc. All rights reserved.</div>
+			</td>
+			</tr>
+		   <tr></tr>
+			</table>
+			</div>
+			</div>	
+        </div>     </body>
+</html>

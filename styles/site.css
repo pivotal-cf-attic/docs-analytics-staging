@@ -31,22 +31,17 @@ a img {
 /* End generic */
 
 /* Main body */
+div.main .main-header.pageSectionHeader {background-image: url(header-image.jpg) center top fixed no-repeat;      }  !important
+
+
+
+
  body {
 font: normal 15px Arial, sans-serif;
 }
-/* h1 {
-    color: #3b7fc4;} !important
- h2, h3, h4, h5 {
-    color: #FFFFFF;} !important
-    h6 {
-    color: #999999;} !important
 
-    p
-{
-word-spacing:30px;
-}
-p.big {line-height:200%}
-*/
+
+
 /*JWK-* if space-ia is on, we want width to be auto*/
 .ia-splitter .aui-page-panel {
     width: auto;
@@ -145,12 +140,57 @@ p.big {line-height:200%}
 /* End metadata stuff*/
 
 /* Page content */
-#main {
+/*#navigation {
+    position: absolute;
+    width: 210px;
+    height: 600px;
     margin: 0;
-    padding: 20px;
-    clear: both;
+    margin-top: 0px;
+    border-right: 1px solid #C6EC8C;
+    font-weight: normal;
+} */
+#main {
+    position: absolute;
+	 width: 1000px;
+    margin: 0;
+    padding: 0 0 20px 0; /*top right bottom left*/
+    margin-top: 50px;
+    margin-left: 235px;
     min-height: 600px;
+	overflow:auto;
+padding-bottom: 150px;
+}  /* must be same height as the footer */
+
+#wrap { min-height:100%; margin-bottom:-50px; } 
+/*#footer1{ margin-top:-50px; height:50px; }*/
+
+html {
+    position: relative;
+    min-height: 100%;
 }
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
+#footer-1 {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+   color:#FFFFFF;
+}
+/*#footer-1 {
+    position: absolute;
+    /*bottom: 50px;
+    width: 100%;
+}*/
+
+/*#footer1 {position: relative;
+margin-top: -150px; /* negative value of footer height 
+height: 150px;
+clear:both;} */
+
 
 #title-heading {
     margin: 0;
@@ -202,9 +242,9 @@ body.theme-default #footer {
     padding: 0;
 }
 
-body.theme-default #footer .footer-body {
+body.theme-default #footer .footer-body { 
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAuCAYAAABqK0pRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpCNDI3QTM5RTEwMzM2ODExODA4NjlCM0YyRDQ4RkI0MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMUY1REQ0Qzg1MDAxMUUxQkFCQzhENkQwNkQ3NDI2NyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMUY1REQ0Qjg1MDAxMUUxQkFCQzhENkQwNkQ3NDI2NyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RkE3RjExNzQwNzIwNjgxMThDMTRDRkQ1NTI3RURFN0QiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjQyN0EzOUUxMDMzNjgxMTgwODY5QjNGMkQ0OEZCNDIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7XZaOHAAADFElEQVR42tSZjW6jMAyACQ2FsnLbPUjf/z36IFN10BXaUI5MRrKshJgklM1SpGo0qT//h4nT6ZQnSSLH9TWuIfldshtXMa5OA/yBPx7GdfslQBqgBAgtmQZR4BEBD/VqAUr9MIAcLSxKA1zG9QYemaSApQDqPq5+4/DJ4TOV5nw+3ySEUaPjbFwV+bJ+fpyoAah7gacyUHxvUV7LAyC+dZFCCPzgE3lHkI0SVom+/wCoJ3xeKgLO3KHzM8eeHvK4pcpRucIXSwsQtlpmsRQXYIkMc8VIzmzCQPmMi02AMcXoAS4IBbqimM1nvBRLBshFduVc4t4OVg0wU2jJSMpPOedVTHCyJx5QOJx2aKWMcHmCwn2MKsix5gG5enBYc40esoffDcqRDPWRCmDuoPRaDXIqwQXRLzjZTSNCgrr+LRJAhUI0emgpx96jYXwRoFQKedCjMEnhzIacVaABMPHpTZxk7wxDGpYSKhmO69wRriYQX4N+S8rw2t3xnMaycliwNex3NdE2BkjHuJ9UhjHHlnNfJAyPDG9E8cjAsIgkCj0sRaAh+fTOmBJYxYTbEK8QAsLRbxSCvpLO3xKDHJmTbstRMGVWt4FpmQopPsClbSrRNcmLA+O8mlt+uSCThTmjxAeBqUmVKgw5ZQupxxogk4VciS8IDG2oHIh+pmBEGRqnZlYxYS7Ii5IJoQ31b+mbnKUeSRaMJdgzEj5zrNZ4jfGec1EDShVMGLHg3NZHoTTxl5ppORHZ01EvVpNcZhJ7abjWIQekgQoMJKE3gYgBEgoTBSIWiC9MNIiYID4wz6j348Bkt8FwCkCJ7v8/xiPCMCxyOjNnjH8piPbAX9QguTCCOba8BOQNeaNCMApgXJInEd4Xh+aIMNwrKnQ9VVCZXFbXzz+39EhpifGPmZuhSXaMuW01EDFzy6OxT+/qtqvyJiCufy9IUpZdFyUZMrOFgOwXvv3oGD0j38ojS1/juHLFu3r5Vi3XDypLTrTwGkjEBklX2nd3QEa/tfqChLzFd+WJWEMhm3SOMFCee5++l7T/AgwAB4DnTld9IesAAAAASUVORK5CYII=) center bottom no-repeat;
-    color: #707070;
+    color: #FFFFFF;
     font-size: 12px;
     margin: 20px 0;
     padding: 0 0 65px 0;
@@ -357,7 +397,7 @@ body.people #main {
 body.people #main-header {
     padding: 20px;
     margin-bottom: 0;
-    background-color: #f5f5f5;
+    background-color: #3B7FC4;
 }
 
 .people-directory .dashboard-section {
@@ -2233,10 +2273,22 @@ font: normal 15px Arial, sans-serif;
 /* End metadata stuff*/
 
 /* Page content */
-#main {
+#navigation {
+    position: absolute;
+    width: 210px;
+    height: 600px;
     margin: 0;
-    padding: 20px;
-    clear: both;
+    margin-top: 0px;
+    border-right: 1px solid #C6EC8C;
+    font-weight: normal;
+}
+#main {
+    position: absolute;
+	 width: 1000px;
+    margin: 0;
+    padding: 0 0 20px 0; /*top right bottom left*/
+    margin-top: 50px;
+    margin-left: 235px;
     min-height: 600px;
 }
 
@@ -2803,6 +2855,9 @@ h1.pagetitle img.logo {
     *margin-bottom: 0;
 }
 
+ body {background-image: url(header-image.jpg) center top fixed no-repeat;      }  !important
+
+
 * html h1.pagetitle img.custom {
    /* sets max-height for IE - roughly equivalent to what real browsers do with 2.5em max-height */
    height: expression( this.scrollHeight > 59 ? "60px" : "auto" );
@@ -2900,9 +2955,32 @@ div.dashboard .dashboard-group.right {
 
 
 
+div.main .main-header.pageSectionHeader {background-image: url(header-image.jpg) center top fixed no-repeat;      }  !important
+
 /*
     Colors for Confluence (included for all themes by default).
 */
+/*#main-header.pagesectionHeader
+                   {
+    color: #C14513;
+}    */
+     /*div.header-wrap {background-color: #3B7FC4;}         */
+     <style type="text/css">
+.header-wrap {
+	font: bold large cursive;
+	border:1px solid #000000;
+	background-color: #3B7FC4;
+}
+</style>
+<div class="header-wrap">
+<p>This div element has a background-color of #ff9900</p>
+</div>
+
+#footer-links
+{
+color=#FFFFFF}
+
+
 .pagetitle,
 .steptitle,
 .substeptitle,
@@ -3246,7 +3324,7 @@ div.license-personal a {
 }
 
 .tabletitle, .heading-text-color {
-    color: #333333;
+    color: #000000;
 }
 
 ol.autocompleter li.focused {

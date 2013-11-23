@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Configuring Pivotal AX</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+
+		   <div id="header-1">
+				<div id="header-main" class="Headerlogo">		
+			<table style="width:100%; background-color: #01786E; font-color: #FFFFFF ">
+			<tr></tr>
+			<tr>
+			<td height="75" width=10%></td>			
+			<td height="75">
+			<div style="width:50%;text-align: center;">
+			<img src="images/logo.png" align="middle"></div>
+			</td>
+			<td height="75" width=25%>
+			</td>
+			<td height="75"><div style="width: 50%;text-align: right; font-size: x-large; font-color: #FFFFFF">Pivotal AX</div>
+			</td>
+			</tr>
+			</table>
+			</div>
+			</div>		
+
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Configuring Pivotal AX
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Nov 22, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <p>The following steps configure your Pivotal AX installation. After you fill in the necessary information, the Pivotal CF Installer creates the necessary virtual machines and installs the Pivotal AX software. Depending on the type and amount of hardware, network throughput, and the size of your installation, this process can take up to several hours to complete. </p><p>Before beginning these steps, you must complete the vSphere, Pivotal CF Installer setup and your Pivotal HD cluster should be installed, configured, and running. See <a href="InstallationGuide.html">Installation Guide</a>.</p><p>You should be logged on to the Pivotal CF Installer Web application to begin these steps. (See <a href="ConfiguringthePivotalCFInstallertoInstallPivotalAX.html">Configuring the Pivotal CF Installer to Install Pivotal AX</a> for login instructions.)</p><ol><li><p>Click the <strong>Pivotal AX</strong> Box.<br />The Pivotal AX configuration page displays.</p></li><li>Select the <strong>Settings</strong> tab.<br /> <img class="confluence-embedded-image" width="500" src="attachments/63902582/65733041.png" data-image-src="attachments/63902582/65733041.png"></li><li><p>Select <strong>Pivotal AX </strong>from the navigation menu on the left and enter the user name and password for your Pivotal AX Administrative User.</p></li><li>Click <strong>Save</strong>.</li><li><p>Select <strong>Network and Email </strong>from the left navigation menu and enter the following information about your company network:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th><th class="confluenceTh">Default Value</th></tr><tr><td colspan="1" class="confluenceTd">Host Mappings</td><td colspan="1" class="confluenceTd"><span>IP address to host name mappings for all nodes in the Pivotal HD cluster. Enter each mapping as pairs of IP addresses and host names, separated by a space, with each mapping on a separate line. For example:<br /></span><code>abc-w18.dh.fooco.com 10.110.124.221 <br />abc-w19.dh.fooco.com 10.110.124.222</code> <span> </span></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd">SMTP Host and Port</td><td class="confluenceTd"><p>Host name and port number of the outgoing mail server used by Pivotal AX to send email notifications to users.</p></td><td class="confluenceTd">Port: 25</td></tr><tr><td class="confluenceTd">SMTP User Name and Password</td><td class="confluenceTd">Username and password for access to the SMTP server. Leave these fields blank if the SMTP server does not require username and password authentication.</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">Enable SMTP Starttls</td><td class="confluenceTd">Select this option if the SMTP server uses encryption.</td><td class="confluenceTd">disabled</td></tr><tr><td class="confluenceTd">Support Email</td><td class="confluenceTd">Email alias that users can use to make support requests.</td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><span>Proxy Host and Port</span></td><td colspan="1" class="confluenceTd">Host name and port number of proxy server. If your network does not require a proxy server, you may leave these fields blank</td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div></li><li>Click <strong>Save</strong>.</li><li><p>Select <strong>Pivotal HD</strong> from the left navigation menu and enter the following information about your Pivotal HD (Hadoop) installation:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th><th class="confluenceTh">Default Value</th></tr><tr><td colspan="1" class="confluenceTd">Pivotal AX Version</td><td colspan="1" class="confluenceTd">Select the version number of your Pivotal HD deployment from the drop-down list. For information on supported versions, see <a href="SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing Guidelines</a>.</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd">HDFS Name Node IP and Port</td><td class="confluenceTd">IP address and port number of the HDFS name node</td><td class="confluenceTd">Port 8020</td></tr><tr><td colspan="1" class="confluenceTd">HBase Zookeeper Hosts</td><td colspan="1" class="confluenceTd">IP addresses of HBase Zookeeper hosts. Separate the hosts with a comma.</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd">HBase Master Port</td><td class="confluenceTd">Port number of the HBase master</td><td class="confluenceTd">60000</td></tr><tr><td colspan="1" class="confluenceTd">HBase Master Info Port</td><td colspan="1" class="confluenceTd">Port number of the HBase master Info</td><td colspan="1" class="confluenceTd">60010</td></tr><tr><td class="confluenceTd">Hive Server IP and Port</td><td class="confluenceTd">IP address and port number of the Hive server</td><td class="confluenceTd">Port 10000</td></tr><tr><td class="confluenceTd">YARN Resource Manager IP and Port</td><td class="confluenceTd">IP address and port number used for the YARN resource manager</td><td class="confluenceTd">Port 8032</td></tr><tr><td class="confluenceTd">YARN Scheduler port</td><td class="confluenceTd">Port number for the YARN scheduler</td><td class="confluenceTd">8030</td></tr><tr><td class="confluenceTd">Map Reduce History Server IP and Port</td><td class="confluenceTd">IP address and port number for the Map Reduce Server</td><td class="confluenceTd">Port 10020</td></tr><tr><td colspan="1" class="confluenceTd">Map reduce Java Opts</td><td colspan="1" class="confluenceTd">Java options that are passed to Map Reduce jobs.</td><td colspan="1" class="confluenceTd">-Xmx2048m</td></tr><tr><td colspan="1" class="confluenceTd">Map Task Memory Size</td><td colspan="1" class="confluenceTd">Memory size, in megabytes, for Map tasks<br />simon: Increase for large data sets??how much?</td><td colspan="1" class="confluenceTd">2176</td></tr><tr><td colspan="1" class="confluenceTd">Reduce Task Memory Size</td><td colspan="1" class="confluenceTd">Memory size, in megabytes for Reduce tasks</td><td colspan="1" class="confluenceTd">2176</td></tr><tr><td colspan="1" class="confluenceTd">Hadoop Kerberos Enabled</td><td colspan="1" class="confluenceTd"><p>Select this option only if your Pivotal HD cluster has Kerberos enabled.</p><p>(Supported only for Pivotal HD version 1.0.1.)</p></td><td colspan="1" class="confluenceTd">disabled</td></tr><tr><td colspan="1" class="confluenceTd">Hadoop Kerberos Domain Realm</td><td colspan="1" class="confluenceTd">Domain realm for Hadoop Kerberos</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">Hadoop Kerberos Admin Server IP and Port</td><td colspan="1" class="confluenceTd">IP address and port number of the Hadoop Kerberos Admin server.</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">Hadoop Kerberos Key Distribution Center Server IP and Port</td><td colspan="1" class="confluenceTd">IP address and port number of the Hadoop Key Distribution server</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">Hadoop Kerberos Access Keytab File Content</td><td colspan="1" class="confluenceTd">(base 64 encoded) from binary file. This file was created and encoded in a previous installation step. See <a href="PreparingyourPivotalHDDeploymentforPivotalAX.html">Preparing your Pivotal HD Deployment for Pivotal AX</a>.</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">HDFS Name Node FQDN</td><td colspan="1" class="confluenceTd">Fully-qualified domain name for the HDFS Name node <span>(Required only when Kerberos is enabled.)</span></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">HDFS Resouce Manager FDQN</td><td colspan="1" class="confluenceTd"><span>Fully-qualified domain name for the HDFS Resource manager (Required only when Kerberos is enabled.)</span></td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div></li><li>Click <strong>Save</strong>. </li><li><p>Select <strong>Pivotal CF  </strong>from the left navigation menu and enter the following information about your Pivotal Cloud Foundry installation:<br /> <strong>Note:</strong> Fill in these fields only if you want to enable Cloud Foundry applications to send data to your Pivotal AX deployment.  <br />?? there may be additonal steps: see &quot;INtegrate PA as a CF Service doc  from Simon in GD.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th><th class="confluenceTh">Default Value</th></tr><tr><td class="confluenceTd">Cloud Controller URL</td><td class="confluenceTd">URL for Cloud Foundry Controller</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">Cloud Foundry Credentials</td><td class="confluenceTd"> Username and password for your Pivotal Cloud Foundry installation.</td><td class="confluenceTd"> </td></tr></tbody></table></div></li><li><p>Click <strong>Save</strong>.<br />Select <strong>Resource Sizes</strong> from the left menu.<br />The Resource sizes configuration screen displays. On this screen, you define the number of instances applied to each of the resources required for your Pivotal AX installation. The number of instances for each job depend on the size of your Pivotal AX deployment and the type of analytics you intend to perform. <br /> <br />For more information, see <a href="SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing Guidelines</a>.<br /> <br />You can configure the number of instances, CPU, RAM, and disk space for each of the following types of nodes in your Pivotal AX deployment:</p><ul><li>Zabbix and CF broker</li><li>Management</li><li>Messaging</li><li>Query</li><li>Storm</li><li>Compilation</li></ul><p><img class="confluence-embedded-image" width="500" src="attachments/63902582/64192946.png" data-image-src="attachments/63902582/64192946.png"> </p></li><li>Click <strong>Save.</strong></li><li>Click <strong>Install Updates</strong> ?? yes? this starts the vm creation? <br />The installation process begins.<br />The installer attempts to validate the values you entered. If any error messages display, make the necessary corrections and click Save.<br /> The Install Pivotal CF page displays the progress of the installation. From this page:</li><li>?? true? Click  <strong>Show Progress</strong> to update the display.<br />Click Show verbose output to see the output of the installation commands.  <br />??what indicates completion?</li><li>When the installation is complete, click the <strong>Status</strong> tab to see IP addresses. Note the IP address of the management node.</li></ol><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/63902582/65733042.png">resource_sizes.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/63902582/65733041.png">pivotal_cf_install_settings.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/63902582/64192946.png">resource_sizes.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+		<div id="footer-1">
+		<table style="width:100%; background-color: #01786E">
+		<tr></tr>
+			<tr><td height="50" width=10%></td>
+			<td height="50 width:75%;text-align: left; font-size: small; font color: #FFFFFF">			
+		<div id="footer-links">
+				<a href="http://www.gopivotal.com/about-pivotal/contact-us">Contact Us</a>
+                |
+                <a href="http://www.gopivotal.com/privacy-policy">Private Policy</a> 
+                |
+                <a href="http://www.gopivotal.com/terms-of-use">Terms of Use</a></div>
+			</td>
+			<td height="50" width=25%>
+			</td>
+			<td height="50"><div style="width: 75%;text-align: left; font-size: small; font color: #FFFFFF;">2013 GoPivotal, Inc. All rights reserved.</div>
+			</td>
+			</tr>
+		   <tr></tr>
+			</table>
+			</div>
+			</div>	
+        </div>     </body>
+</html>
