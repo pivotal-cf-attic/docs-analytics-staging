@@ -1,6 +1,7 @@
 
 /* PDL master.css */
 /* Generic */
+
 fieldset {
     border: none;
     margin: 0;
@@ -34,15 +35,12 @@ a img {
 div.main .main-header.pageSectionHeader {background-image: url(header-image.jpg) center top fixed no-repeat;      }  !important
 
 
-
-
  body {
 font: normal 15px Arial, sans-serif;
 }
 
 
-
-/*JWK-* if space-ia is on, we want width to be auto*/
+/*JWK - if space-ia is on, we want width to be auto*/
 .ia-splitter .aui-page-panel {
     width: auto;
 }
@@ -72,7 +70,6 @@ font: normal 15px Arial, sans-serif;
 }
 
 /* End generic admin sidebar/vertical nav*/
-
 /* Space Admin sidebar */
 .in-page-menu {
   padding: 10px;
@@ -84,7 +81,6 @@ font: normal 15px Arial, sans-serif;
 }
 
 /* End Space Admin sidebar */
-
 /*Global messages above the header*/
 #messageContainer {
     list-style-type: none;
@@ -138,66 +134,83 @@ font: normal 15px Arial, sans-serif;
     margin-left: 3px;
 }
 /* End metadata stuff*/
-
 /* Page content */
-/*#navigation {
+#navigation {
     position: absolute;
-    width: 210px;
+    width: 350px;
     height: 600px;
     margin: 0;
+	margin-left: 150px;
     margin-top: 0px;
-    border-right: 1px solid #C6EC8C;
+	font-size: small;
     font-weight: normal;
-} */
+	text-decoration:none;
+} 
+
 #main {
     position: absolute;
-	 width: 1000px;
-    margin: 0;
-    padding: 0 0 20px 0; /*top right bottom left*/
-    margin-top: 50px;
-    margin-left: 235px;
-    min-height: 600px;
 	overflow:auto;
-padding-bottom: 150px;
+	width: 800px;
+    margin: 0;
+   /* padding: 0 0 20px 0; /*top right bottom left*/
+    margin-top: 50px;
+    margin-left: 500px;
+    min-height: 600px;
+    padding-bottom: 150px;
 }  /* must be same height as the footer */
 
-#wrap { min-height:100%; margin-bottom:-50px; } 
-/*#footer1{ margin-top:-50px; height:50px; }*/
 
+/*#wrap {
+	min-height:100%
+	height: auto;
+	} */
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -150px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+	
+		
 html {
     position: relative;
-    min-height: 100%;
+    height: 100%;
 }
+
 body {
     margin: 0 0 100px; /* bottom = footer height */
+	height: 100%;
 }
+
+#tocrbtoc* {
+visibility: hidden;
+}
+
 
 #footer-1 {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:50px;
-   width:100%;
-   color:#FFFFFF;
+   position: fixed;
+   margin-top: -150px; /*negative value of footer height */
+   height: 150px;
+   left: 0px;
+   bottom: 0px;
+   height: 50px;
+   width: 100%;
+   font-size: small;
+   color: #FFFFFF;
+   clear: both;
 }
-/*#footer-1 {
-    position: absolute;
-    /*bottom: 50px;
-    width: 100%;
-}*/
-
-/*#footer1 {position: relative;
-margin-top: -150px; /* negative value of footer height 
-height: 150px;
-clear:both;} */
 
 
 #title-heading {
     margin: 0;
     padding: 0;
 }
-#title-text a {
-    color: #333;
+.title-text a {
+    color:  #F16F3B;
 }
 
 .navBackgroundBox {
@@ -2273,31 +2286,36 @@ font: normal 15px Arial, sans-serif;
 /* End metadata stuff*/
 
 /* Page content */
-#navigation {
+
+/*#navigation {
     position: absolute;
-    width: 210px;
+    width: 310px;
     height: 600px;
     margin: 0;
     margin-top: 0px;
-    border-right: 1px solid #C6EC8C;
+	margin-left: 50px;
     font-weight: normal;
-}
+	font-size: x-small;
+	text-decoration:none;
+} 
 #main {
     position: absolute;
-	 width: 1000px;
+	 width: 900px;
     margin: 0;
-    padding: 0 0 20px 0; /*top right bottom left*/
+    padding: 0 0 20px 0; top right bottom left
     margin-top: 50px;
-    margin-left: 235px;
+    margin-left: 375px;
     min-height: 600px;
-}
+	overflow:auto;
+    padding-bottom: 150px;
+}  */
 
 #title-heading {
     margin: 0;
     padding: 0;
 }
 #title-text a {
-    color: #333;
+    color:  #F16F3B;
 }
 
 .navBackgroundBox {
@@ -2344,7 +2362,7 @@ body.theme-default #footer {
 
 body.theme-default #footer .footer-body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAuCAYAAABqK0pRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpCNDI3QTM5RTEwMzM2ODExODA4NjlCM0YyRDQ4RkI0MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMUY1REQ0Qzg1MDAxMUUxQkFCQzhENkQwNkQ3NDI2NyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMUY1REQ0Qjg1MDAxMUUxQkFCQzhENkQwNkQ3NDI2NyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RkE3RjExNzQwNzIwNjgxMThDMTRDRkQ1NTI3RURFN0QiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjQyN0EzOUUxMDMzNjgxMTgwODY5QjNGMkQ0OEZCNDIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7XZaOHAAADFElEQVR42tSZjW6jMAyACQ2FsnLbPUjf/z36IFN10BXaUI5MRrKshJgklM1SpGo0qT//h4nT6ZQnSSLH9TWuIfldshtXMa5OA/yBPx7GdfslQBqgBAgtmQZR4BEBD/VqAUr9MIAcLSxKA1zG9QYemaSApQDqPq5+4/DJ4TOV5nw+3ySEUaPjbFwV+bJ+fpyoAah7gacyUHxvUV7LAyC+dZFCCPzgE3lHkI0SVom+/wCoJ3xeKgLO3KHzM8eeHvK4pcpRucIXSwsQtlpmsRQXYIkMc8VIzmzCQPmMi02AMcXoAS4IBbqimM1nvBRLBshFduVc4t4OVg0wU2jJSMpPOedVTHCyJx5QOJx2aKWMcHmCwn2MKsix5gG5enBYc40esoffDcqRDPWRCmDuoPRaDXIqwQXRLzjZTSNCgrr+LRJAhUI0emgpx96jYXwRoFQKedCjMEnhzIacVaABMPHpTZxk7wxDGpYSKhmO69wRriYQX4N+S8rw2t3xnMaycliwNex3NdE2BkjHuJ9UhjHHlnNfJAyPDG9E8cjAsIgkCj0sRaAh+fTOmBJYxYTbEK8QAsLRbxSCvpLO3xKDHJmTbstRMGVWt4FpmQopPsClbSrRNcmLA+O8mlt+uSCThTmjxAeBqUmVKgw5ZQupxxogk4VciS8IDG2oHIh+pmBEGRqnZlYxYS7Ii5IJoQ31b+mbnKUeSRaMJdgzEj5zrNZ4jfGec1EDShVMGLHg3NZHoTTxl5ppORHZ01EvVpNcZhJ7abjWIQekgQoMJKE3gYgBEgoTBSIWiC9MNIiYID4wz6j348Bkt8FwCkCJ7v8/xiPCMCxyOjNnjH8piPbAX9QguTCCOba8BOQNeaNCMApgXJInEd4Xh+aIMNwrKnQ9VVCZXFbXzz+39EhpifGPmZuhSXaMuW01EDFzy6OxT+/qtqvyJiCufy9IUpZdFyUZMrOFgOwXvv3oGD0j38ojS1/juHLFu3r5Vi3XDypLTrTwGkjEBklX2nd3QEa/tfqChLzFd+WJWEMhm3SOMFCee5++l7T/AgwAB4DnTld9IesAAAAASUVORK5CYII=) center bottom no-repeat;
-    color: #707070;
+    color: #ffffff;
     font-size: 12px;
     margin: 20px 0;
     padding: 0 0 65px 0;
@@ -2960,11 +2978,7 @@ div.main .main-header.pageSectionHeader {background-image: url(header-image.jpg)
 /*
     Colors for Confluence (included for all themes by default).
 */
-/*#main-header.pagesectionHeader
-                   {
-    color: #C14513;
-}    */
-     /*div.header-wrap {background-color: #3B7FC4;}         */
+     
      <style type="text/css">
 .header-wrap {
 	font: bold large cursive;
@@ -2976,11 +2990,6 @@ div.main .main-header.pageSectionHeader {background-image: url(header-image.jpg)
 <p>This div element has a background-color of #ff9900</p>
 </div>
 
-#footer-links
-{
-color=#FFFFFF}
-
-
 .pagetitle,
 .steptitle,
 .substeptitle,
@@ -2989,6 +2998,11 @@ color=#FFFFFF}
     color: #C14513;
 }
 
+#main.title-text ,
+{
+color: #F16F3B
+ }
+ 
 h1,
 .wiki-content h1,
  {
@@ -3039,7 +3053,7 @@ table.admin th,
 #toolbar #format-dropdown .format-h4 a
 #toolbar #format-dropdown .format-h5 a,
 #toolbar #format-dropdown .format-h6 a  {
-    color: #FFFFFF;
+    color: #333333;
 }
 
 #format-dropdown .mce_formatPreview.mce_blockquote a {
@@ -3083,6 +3097,29 @@ blockquote {
     border-left-color: #cccccc;
 }
 
+/* left navigation links */
+#navigation a,
+#navigation a:link,
+#navigation a:visited,
+#navigation a:focus,
+#navigation a:hover,
+#navigation a:active,
+#navigation a.blogHeading {
+color: #3b73af; text-decoration: none;
+}
+
+/* footer links */
+#footer-1 a,
+#footer-1 a:link,
+#footer-1 a:visited,
+#footer-1 a:focus,
+#footer-1 a:hover,
+#footer-1 a:active,
+#footer-1 a.blogHeading {
+color: #FFFFFF; text-decoration: none;
+}
+
+/* links */
 a,
 a:visited,
 a:focus,
@@ -3098,6 +3135,8 @@ a.blogHeading {
 .aui-nav-vertical li a:active {
     color: #3b73af;
 }
+
+
 
 .wiki-content a,
 .wiki-content a:link,
@@ -3754,4 +3793,112 @@ h1#title-heading.with-breadcrumbs img {
 
 
 /* End PDL default-theme.css */
+
+/* Pivotal: Hints, notes, tips, and warnings */
+
+/* Pivotal: Hints, notes, tips, and warnings: background tile */
+
+.wiki-content .aui-message {
+    margin: 10px 0 20px;
+}
+.aui-message.problem {
+    background: none repeat scroll 0 0 #FFF8F7;
+    border-color: #D04437;
+}
+.aui-message.error {
+    background:#d04437;
+    border-color:#d04437;
+    color:#fff;
+}
+.aui-message.warning {
+    background:#fffdf6;
+    border-color:#ffeaae;
+}
+.aui-message.info {
+    background:#fcfcfc;
+    border-color:#8c9fb2;
+}
+.aui-message.success {
+    background:#f3f9f4;
+    border-color:#91c89c;
+}
+.aui-message.hint {
+    background:#fcfcfc;
+    border-color:#aab8c6;
+}
+.aui-message.shadowed {
+    box-shadow: none;
+}
+
+.aui-message {
+    background: none repeat scroll 0 0 #FCFCFC;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    color: #333333;
+    margin: 10px 0 0;
+    padding: 10px 10px 10px 36px;
+    position: relative;
+}
+
+*::-moz-placeholder {
+}
+*::-moz-placeholder {
+}
+
+.wiki-content {
+    font-family: sans-serif;
+    line-height: 25px;
+}
+
+
+/* Pivotal: Hints, notes, tips, and warnings: titles */
+.aui-message p.title {
+    font-weight: bold;
+}
+.wiki-content p, .wiki-content ul, .wiki-content ol, .wiki-content table {
+    margin: 0 0 10px;
+}
+.wiki-content p {
+    color: #333333;
+    font-weight: normal;
+    line-height: 25px;
+}
+
+
+/* Pivotal: Hints, notes, tips, and warnings: icons */
+.aui-message .aui-icon {
+    left: 10px;
+    position: absolute;
+    top: 12px;
+}
+.aui-message .icon-hint, .aui-icon-hint, .aui-message .icon-info, .aui-icon-info {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1klEQVR42qWTUQqCQBCGfdKCuogu+qBeoot0kl7TBwU9S3QLyega9ZBh1L/wLyyDLGkLHzj/vzPM7o6eXLv9IQRH0IMnuVAL7b0y0QcVeIPPFPQasJ5KPlkbW5CDFcmpGf8MfLtATeMGEqObBCuOwJV6ZYsjxVhrsoDQEuojiLRQmLa9H5d1nEIHPYOMvrMD6hm9XgcDg2BGgYDesLTAlt596RFSep3jEp0FWnqlDtTMZ4ytZ1SuQZJLDlLtGuUGpNQ3/G7kKP/5M7nbLNnqCzxAR03J/V+HSh9XtOsatQAAAABJRU5ErkJggg==");
+}
+.aui-message .icon-success, .aui-icon-success {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9klEQVR42qWTPQrCQBSErfwBhRQewDoGFYyHtDEWCSSVR8gBRDxCGjFi4xEstFBR4jyYYnmuK5LAB/vmzexuNpuGfvrzwAcLUIIb2VPzTa8ONkEMXqCywV4KOrbw2jBmYAbaZEatIhvJmBMkbBzB2LHLITjQG5vik+Ko8eORBeh9SlaEiELmCHmgACvWGTORFCWL8Et4IGF6TtRC1qUUdxYtNiOB4wk4s18Aj3qL2v1jAiOQ28L09Khf1CuoVS1heqbs7ayHyEm2INdhdYhLKYI/P+PI+IxBnYuUuK5yCqbUuxyn+irX/Jnc21xyqw9wBTtqgfa/Af067eG0xhemAAAAAElFTkSuQmCC");
+}
+.aui-message .icon-problem, .aui-icon-problem {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA20lEQVQ4y6WTTQ6CQAyFZ+VPohcBAgvBC3g/YQEJnsV4BjdGjNfQhRiNvppHUnGYBJnkS+jrtHQ6HWNaa79aemANKnAjR2qe6VpwjkAOnuDVgfhKMLUFb9XGDUjAhCTUGv9OYnSCgo4ziJT+CVC2D07Ucy0+KIatyr4SUIuoS4wvQtqUbenLTwLqzXFSw26LEfdIENNXiVHTGPdIMKav/jfBnL6L8wiOmVkw5jC0iZkYQc9rDNU1Bs5BsvxZD1LhGuWS5xR9xu+yc5QHPyZLmRlLvYOrdJta0N7/BnQXKgcW/4OXAAAAAElFTkSuQmCC");
+}
+.aui-message .icon-warning, .aui-icon-warning {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABA0lEQVR42p2QP0tCURiH7zdQRA3u4OJUiyDY4CDtTuEXuXs0JEQ4uDk5C0EuKoEu+SWcg5baLCS7tNTx98IzyMWjXoeHe95/z3vODdzi2kdTvIo30fL1+YbLIhYOfsV5GsFAOL59zsNjBRfij60lEXKbf1E5RvDExl4URYGwXJfc6JCgwqZYhBp2hs5n4odadZ9gzKYu2x1YrUPt2SeosWEtijsEBfGN5HKXYErxweKkAMk9PbOkoE5hJXI+AbUVvfVtwZzkHTECAGptel8cgisSnyJDk+8GRlZ8MdOwxITghoa9ArhlZmzB+/abDjwh+c8+LBgRnMLEBHnxKJYpBpfMFDbGjWcGPFD11gAAAABJRU5ErkJggg==");
+}
+
+.aui-icon {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: medium none;
+    display: inline-block;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-indent: -999em;
+    vertical-align: text-bottom;
+    width: 16px;
+}
+
+
+
+
 

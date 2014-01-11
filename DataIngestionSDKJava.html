@@ -1,0 +1,225 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+<body>
+<div class="page-wrap">
+<div id="page">
+<div id="header-1">
+<div id="header-main" class="Headerlogo">
+<table style=
+"width:100%; background-color: #01786E; font-color: #FFFFFF">
+<tr>
+<td></td>
+</tr>
+<tr>
+<td height="75" width="5%"></td>
+<td height="75">
+<div style="width:50%;text-align: center;"><a href=
+"http://www.gopivotal.com"><img src="images/logo.png" border="0"
+align="middle"></a></div>
+</td>
+<td height="75" width="40%"></td>
+<td height="75"><span id="prod-title" style=
+"width: 50%;text-align: right; font-size: xx-large; color: #FFFFFF">
+Pivotal AX</span></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="navigation">
+<div id="nav">
+<h3>   </h3>
+
+<! Insert nav>
+
+<p>
+                <a href="index.html">Pivotal AX Version 1.0</a>
+</p>
+
+                            <ul>
+                    <li>
+                <a href="InstallationGuide.html">Installation Guide</a>
+
+                            <ul>
+                    <li>
+                <a href="SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing Guidelines</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DeployingthePivotalCFOperationsManagerVirtualMachine.html">Deploying the Pivotal CF Operations Manager Virtual Machine</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="ConfiguringPivotalCFOperationsManagertoInstallPivotalAX.html">Configuring Pivotal CF Operations Manager to Install Pivotal AX</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="PreparingyourPivotalHDDeploymentforPivotalAX.html">Preparing your Pivotal HD Deployment for Pivotal AX</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="ConfiguringPivotalAX.html">Configuring Pivotal AX</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="LoggingintoPivotalAX.html">Logging in to Pivotal AX</a>
+
+                    </li>
+            </ul>
+            </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="AdministrationGuide.html">Administration Guide</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataSourceManagementGuide.html">Data Source Management Guide</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataVisualizationGuide.html">Data Visualization Guide</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataIngestionAPIs.html">Data Ingestion APIs</a>
+
+                            <ul>
+                    <li>
+                <a href="DataIngestionRESTfulAPIs.html">Data Ingestion RESTful APIs</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataIngestionSDKJava.html">Data Ingestion SDK (Java)</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="JavaScriptDataIngestSDK.html">JavaScript Data Ingest SDK</a>
+
+                    </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+
+
+</div></div>
+		<! Replace div-main>
+<div id ="main"><div class="wiki-content group" id="main-content">
+<h1 id="DataIngestionSDK(Java)-DataIngestionSDK(Java)">Data Ingestion SDK (Java)</h1><p>The client-side Java API constitutes a set of simplified Java calls atop the Sun Jersey API, the standard implementation for Java-based RESTful web services. The data ingestion functionality is provided via the following classes:<br/>  </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><p><strong>Class</strong></p></td><td class="confluenceTd"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd"><p>Event</p></td><td class="confluenceTd"><p>Encapsulates custom events to be submitted to the Pivotal AX Service</p></td></tr><tr><td class="confluenceTd"><p>Config</p></td><td class="confluenceTd"><p>Stores configuration information for initializing a client session to the Service</p></td></tr><tr><td class="confluenceTd"><p>CetasAgent</p></td><td class="confluenceTd"><p>REST client that models a locally stateful connection to the <span>Pivotal AX</span> Service</p></td></tr></tbody></table></div><p>The API calls of the Event class are asynchronous (non-blocking) and are listed in the following table:<br/>  </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><p><strong>Event class API calls</strong></p></td><td class="confluenceTd"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd"><p>Event()</p></td><td class="confluenceTd"><p>Creates a new Event object, with the current time (epoch)</p></td></tr><tr><td class="confluenceTd"><p>set(Date date)</p></td><td class="confluenceTd"><p>Sets the event time to the specified date (using its epoch value)</p></td></tr><tr><td class="confluenceTd"><p>set(long time)</p></td><td class="confluenceTd"><p>Sets the event time to the specified epoch value</p></td></tr><tr><td class="confluenceTd"><p>set(String name, String value)</p></td><td class="confluenceTd"><p>Adds a new attribute &lt;name, value&gt; pair to the Event class</p></td></tr><tr><td class="confluenceTd"><p>set(Map&lt;String, String&gt; attributes</p></td><td class="confluenceTd"><p>Adds all the specified &lt;name, value&gt; pairs to the Event attributes</p></td></tr><tr><td class="confluenceTd"><p>get(String name)</p></td><td class="confluenceTd"><p>Retrieves an existing event attribute with the specified name</p></td></tr></tbody></table></div><p> <br/> The overloaded set() method of the Event class follows the Java builder pattern, i.e. it can be used in statements like the one below:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">event.set(date).set("name1", "value1").set("name2", "value2").set(map);</pre>
+</div></div><p> </p><p>where, presumably, "event" is an already instantiated object of the Event class and "map" is a reference to a Map&lt;String, String&gt; object containing a number of event attributes.<br/> Events are sent from the client via a CetasAgent object, which is initialized using a Config object. This pattern is used for allowing the configuration of CetasAgent objects without having to modify the signature of the CetasAgent class constructor every time new parameters need to be added.<br/> The API calls of the Config class are asynchronous (non-blocking) and are listed in the following table:<br/>  </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><p><strong>Config class API calls</strong></p></td><td class="confluenceTd"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd"><p>Config()</p></td><td class="confluenceTd"><p>Creates a new Config object</p></td></tr><tr><td class="confluenceTd"><p>getDefaultInstance()</p></td><td class="confluenceTd"><p>Provides a singleton Config object with default values for all configuration parameters</p></td></tr><tr><td class="confluenceTd"><p>getCapacity()</p></td><td class="confluenceTd"><p>Returns the current capacity (maximum number of events to be buffered in a session)</p></td></tr><tr><td class="confluenceTd"><p>setCapacity(int)</p></td><td class="confluenceTd"><p>Sets a new capacity value, measured in events</p></td></tr><tr><td class="confluenceTd"><p>getTimeout()</p></td><td class="confluenceTd"><p>Returns the current session duration, in seconds</p></td></tr><tr><td class="confluenceTd"><p>setTimeout(int)</p></td><td class="confluenceTd"><p>Sets a new timeout value, measured in seconds</p></td></tr><tr><td class="confluenceTd"><p>getUpdateInterval()</p></td><td class="confluenceTd"><p>Returns the current update interval (number of seconds between session updates)</p></td></tr><tr><td class="confluenceTd"><p>setUpdateInterval(int)</p></td><td class="confluenceTd"><p>Sets a new update interval, measured in seconds</p></td></tr><tr><td class="confluenceTd"><p>getUserID()</p></td><td class="confluenceTd"><p>Returns ID of the active user</p></td></tr><tr><td class="confluenceTd"><p>setUserID(String)</p></td><td class="confluenceTd"><p>Sets the ID of the current user</p></td></tr><tr><td class="confluenceTd"><p>getUserName()</p></td><td class="confluenceTd"><p>Returns the name of the active user</p></td></tr><tr><td class="confluenceTd"><p>setUserName(String)</p></td><td class="confluenceTd"><p>Sets the name of the active user</p></td></tr></tbody></table></div><p> <br/> As with the Event class, the set() methods of the Config class follow the Java builder pattern, i.e. they can be used in statements like:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">config.setCapacity(10).setUpdateInterval(1800);</pre>
+</div></div><p><br/><span style="background-color: transparent;font-size: 14.0px;line-height: 1.4285715;">where, presumably, "config" is an already instantiated object of the Config class, in which a new capacity of 10 buffered objects and a new update interval of 30 minutes (30 x 60 = 1,800 seconds) is specified.</span><br/> The communication of the client application with the <span>Pivotal AX</span> Service is conducted via a CetasAgent object, representing a single REST-based "connection" between the client and the Pivotal AX cloud. The connection is stateful on the client side and completely stateless on the server side, allowing for unlimited scalability.<br/> The API calls of the CetasAgent class are asynchronous (non-blocking), apart from the synchronous (blocking) update() call, and are listed in the following table:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><p><strong>CetasAgent class API calls</strong></p></td><td class="confluenceTd"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd"><p>CetasAgent(URL, key, config)</p></td><td class="confluenceTd"><p>Creates a new CetasAgent session object, initialized with the server URL, the application key and a set of configuration parameters</p></td></tr><tr><td class="confluenceTd"><p>log(Event)</p></td><td class="confluenceTd"><p>Stores an event the session buffer, without sending it to the Service</p></td></tr><tr><td class="confluenceTd"><p>log(Event[])</p></td><td class="confluenceTd"><p>Stores a group of events to the session buffer, without sending them to the Service</p></td></tr><tr><td class="confluenceTd"><p>update()</p></td><td class="confluenceTd"><p>Posts the contents of the session buffer to the Service</p></td></tr><tr><td class="confluenceTd"><p>update(Event)</p></td><td class="confluenceTd"><p>Posts an event to the Service, after first transmitting any events already stored in the session buffer</p></td></tr><tr><td class="confluenceTd"><p>update(Event[])</p></td><td class="confluenceTd"><p>Posts a group of events to the Service, after first transmitting any events already stored in the session buffer</p></td></tr><tr><td class="confluenceTd"><p>send(Event)</p></td><td class="confluenceTd"><p>Posts an event to the Service, without transmitting any events already stored in the session buffer</p></td></tr><tr><td class="confluenceTd"><p>send(Event[])</p></td><td class="confluenceTd"><p>Posts a group of events to the Service, without transmitting any events already stored in the session buffer</p></td></tr><tr><td class="confluenceTd"><p>stop()</p></td><td class="confluenceTd"><p>Informs the Service that a session has locally been terminated</p></td></tr></tbody></table></div><p><br/> After internal initialization is completed, a connection (login) to the Pivotal AX Service is attempted by the CetasAgent constructor and an exception is thrown if the login attempt is not successful. Client applications should take care of full initialization of CetasAgent objects prior to being able to communicate with the Pivotal AX Service.<br/> The log() calls operate in an asynchronous (non-blocking) mode with respect to the server, unless they result in filling up the event buffer, in which case a blocking update() call is automatically made, emptying the buffer so that subsequent new events can be stored in it.<br/> The update() call represents an optional means for synchronously flushing the event (session) buffer and transmitting its contents to the Pivotal AX Service without having to wait for the preset time interval to expire. It also allows queueing more events for transmission after the buffer contents are transmitted, a behavior that can be overriden by the send() call, which directly sends the supplied event(s), without affecting the contents of the event buffer.<br/><strong>Usage Example</strong><br/> A Java client application can communicate with the Pivotal AX Service via successive REST calls, embedding the SDK code as per the following example:<br/><br/></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">// Example URL to the Pivotal AX Service 
+
+final String URL = "http://insights.cetas.net:8080/rest/agent/"; 
+
+// Unique application key obtained via the Pivotal AX Web UI 
+
+final String APPLICATION_KEY = "&lt;actual key value&gt;"; 
+
+// Create a configuration object for a session with a capacity of 100 events 
+
+// and an update interval of 30 minutes (1800 seconds) 
+
+Config config = new Config().setCapacity(100).setUpdateInterval(1800); 
+
+CetasAgent agent = null; 
+
+try
+{
+   agent = new CetasAgent(URL, APPLICATION_KEY, config);
+}
+catch (Exception e) // Thrown if no connection to the service was possible
+{
+// Handle error condition and retry until connected
+} 
+
+Event event = new Event(); 
+
+// Game application evolving, with the player reaching the end of a level 
+
+// and recording the following custom statistics (shown literally for clarity). 
+
+event.set("level","1").set("time","43.5").set("score","17592").set("bonus","1200"); 
+
+agent.log(event); // Asynchronously store the event in the session buffer 
+
+... // More gameplay with numerous other events added 
+
+// Synchronously transmit all the events buffered so far to the 
+
+// Pivotal AX Application Service. Note that, if the time elapsed is 
+
+// larger than the session update interval, or if the buffer 
+
+// capacity has been exceeded in a previous call to the log() 
+
+// method, at least one agent.update() operation has already 
+
+// taken place. 
+
+agent.update(); 
+
+... // More gameplay with numerous other events added and updated 
+
+// Game ends, logout 
+
+agent.stop();</pre>
+</div></div>
+</div></div>
+   
+<div style="clear: both"></div>
+<div id="footer-1">
+<table style="width:100%; background-color: #01786E">
+<tr>
+<td></td>
+</tr>
+<tr>
+<td height="50" width="5%"></td>
+<td height="50 width:75%;text-align: left; font-size: x-small">
+<span id="footer-links" style="color: #FFFFFF"><a href=
+"http://www.gopivotal.com/about-pivotal/contact-us">Contact Us</a>
+| <a href="http://www.gopivotal.com/privacy-policy">Private
+Policy</a> | <a href="http://www.gopivotal.com/terms-of-use">Terms
+of Use</a></span></td>
+<td height="50" width="40%"></td>
+<td height="50"><span id="copyright" style=
+"width: 75%;text-align: left; font-size: small; color: #FFFFFF;">2013
+GoPivotal, Inc. All rights reserved.</span></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

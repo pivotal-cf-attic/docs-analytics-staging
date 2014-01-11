@@ -1,0 +1,199 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+<body>
+<div class="page-wrap">
+<div id="page">
+<div id="header-1">
+<div id="header-main" class="Headerlogo">
+<table style=
+"width:100%; background-color: #01786E; font-color: #FFFFFF">
+<tr>
+<td></td>
+</tr>
+<tr>
+<td height="75" width="5%"></td>
+<td height="75">
+<div style="width:50%;text-align: center;"><a href=
+"http://www.gopivotal.com"><img src="images/logo.png" border="0"
+align="middle"></a></div>
+</td>
+<td height="75" width="40%"></td>
+<td height="75"><span id="prod-title" style=
+"width: 50%;text-align: right; font-size: xx-large; color: #FFFFFF">
+Pivotal AX</span></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="navigation">
+<div id="nav">
+<h3>   </h3>
+
+<! Insert nav>
+
+<p>
+                <a href="index.html">Pivotal AX Version 1.0</a>
+</p>
+
+                            <ul>
+                    <li>
+                <a href="InstallationGuide.html">Installation Guide</a>
+
+                            <ul>
+                    <li>
+                <a href="SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing Guidelines</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DeployingthePivotalCFOperationsManagerVirtualMachine.html">Deploying the Pivotal CF Operations Manager Virtual Machine</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="ConfiguringPivotalCFOperationsManagertoInstallPivotalAX.html">Configuring Pivotal CF Operations Manager to Install Pivotal AX</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="PreparingyourPivotalHDDeploymentforPivotalAX.html">Preparing your Pivotal HD Deployment for Pivotal AX</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="ConfiguringPivotalAX.html">Configuring Pivotal AX</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="LoggingintoPivotalAX.html">Logging in to Pivotal AX</a>
+
+                    </li>
+            </ul>
+            </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="AdministrationGuide.html">Administration Guide</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataSourceManagementGuide.html">Data Source Management Guide</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataVisualizationGuide.html">Data Visualization Guide</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataIngestionAPIs.html">Data Ingestion APIs</a>
+
+                            <ul>
+                    <li>
+                <a href="DataIngestionRESTfulAPIs.html">Data Ingestion RESTful APIs</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="DataIngestionSDKJava.html">Data Ingestion SDK (Java)</a>
+
+                    </li>
+            </ul>
+                    <ul>
+                    <li>
+                <a href="JavaScriptDataIngestSDK.html">JavaScript Data Ingest SDK</a>
+
+                    </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+
+
+</div></div>
+		<! Replace div-main>
+<div id ="main"><h1>    Data Source Management Guide</h1><div class="wiki-content group" id="main-content">
+<p><style type="text/css">/*<![CDATA[*/
+div.rbtoc1387841723502 {padding: 0px;}
+div.rbtoc1387841723502 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1387841723502 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc rbtoc1387841723502">
+<ul class="toc-indentation">
+<li><a href="#DataSourceManagementGuide-AboutDataSources">About Data Sources</a>
+<ul class="toc-indentation">
+<li><a href="#DataSourceManagementGuide-DataSourcesPage">Data Sources Page</a></li>
+<li><a href="#DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</a>
+<ul class="toc-indentation">
+<li><a href="#DataSourceManagementGuide-Treatingfilecontentsassingle-lineevents">Treating file contents as single-line events</a></li>
+<li><a href="#DataSourceManagementGuide-AboutCompressedFiles">About Compressed Files</a></li>
+</ul>
+</li>
+<li><a href="#DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</a></li>
+<li><a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a></li>
+<li><a href="#DataSourceManagementGuide-SchedulingOptions">Scheduling Options</a></li>
+</ul>
+</li>
+<li><a href="#DataSourceManagementGuide-AddingDataSources">Adding Data Sources</a>
+<ul class="toc-indentation">
+<li><a href="#DataSourceManagementGuide-UploadFiles">Upload Files</a></li>
+<li><a href="#DataSourceManagementGuide-LiveFeeds">Live Feeds</a></li>
+<li><a href="#DataSourceManagementGuide-AmazonS3">Amazon S3</a></li>
+<li><a href="#DataSourceManagementGuide-HDFS">HDFS</a></li>
+<li><a href="#DataSourceManagementGuide-FTPSFTP">FTP/SFTP</a></li>
+<li><a href="#DataSourceManagementGuide-GemFire">GemFire</a></li>
+<li><a href="#DataSourceManagementGuide-ApplicationFeeds">Application Feeds</a></li>
+</ul>
+</li>
+<li><a href="#DataSourceManagementGuide-ResettingAllDataSources">Resetting All Data Sources</a></li>
+<li><a href="#DataSourceManagementGuide-DataIngestionAPIs">Data Ingestion APIs</a></li>
+</ul>
+</div></p><h1 id="DataSourceManagementGuide-AboutDataSources">About Data Sources</h1><p>Pivotal AX <em>Data Sources</em> define the set of data you want to analyze. You define one or more data sources for each Pivotal AX project. (For more information about Pivotal AX projects, see <a href="AdministrationGuide.html#AdministrationGuide-manageprojects">Managing Projects</a>.) Data sources can consist of static files from a variety of sources and can also include live data feeds from applications, log data, and other messages. The procedures for loading these various types of data are discussed in this section. Although you can likely work directly with existing data sources, your business requirements may require that the data be manipulated by filtering, normalizing or eliminating unneeded data dimensions before being submitted to the Pivotal AX system for analysis.</p><p>When you submit a data source for processing, Pivotal AX analyzes and indexes the data. Once this process is complete, you can begin to use Pivotal AX to visualize and analyze your data.</p><h2 id="DataSourceManagementGuide-DataSourcesPage">Data Sources Page</h2><p>The <strong>Data Sources</strong> page is where you add and manage the data sources for your Pivotal AX project.</p><p>To view the <strong>Data Sources</strong> page:</p><ol><li>Log in to Pivotal AX.<br/>See <a href="LoggingintoPivotalAX.html">Logging in to Pivotal AX</a>.</li><li>Select <strong>Data Sources</strong> from the left menu.</li></ol><p><img class="confluence-embedded-image confluence-thumbnail" data-image-src="attachments/62620469/64192523.png" src="attachments/thumbnails/62620469/64192523" width="100"/></p><p>The <strong>Data Sources</strong> page displays an overview of the data sources configured for the current project. You can see at a glance the number of events processed in the last day and detailed information on each data source you have configured. Click the <strong>Application Feeds</strong> tab to see information about your application feeds. </p><p><img class="confluence-embedded-image" data-image-src="attachments/62620469/64192524.png" src="attachments/62620469/64192524.png" width="700"/></p><p> </p><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-datauploadformats"></span></p><h2 id="DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</h2><p>Depending on which type of data source you are processing, you can use one of the following data formats to add data sources:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh" width="20%">Data Format</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">Autodetect</td><td class="confluenceTd">Automatically discovers the format of your data among all currently supported formats, or combinations of formats (including many not explicitly shown in the list).</td></tr><tr><td class="confluenceTd">Apache CLF</td><td class="confluenceTd">Select this format for data compliant with the Apache Common Log Format, or the Apache Combined Log Format.</td></tr><tr><td class="confluenceTd" colspan="1"><p>Avro</p></td><td class="confluenceTd" colspan="1">Select this format for data generated by the Avro framework. Avro is a serialized data communication format used by Hadoop.</td></tr><tr><td class="confluenceTd">CSV <span class="confluence-anchor-link" id="DataSourceManagementGuide-csv"></span></td><td class="confluenceTd"><p>Select this format for data formatted as Comma Separated Values (CSV) or, more generally, Delimiter Separated Values, where the "delimiter" can be any character frequently used as a separator (e.g., a comma or tab). When you select CSV, the following additional options display:</p><ul><li><strong>Separator</strong>—select <strong>Autodetect</strong>, or you can select one of several options for field separators</li><li><strong>Quotes</strong>—select the type of quotes used to identify strings in your data or select <strong>none</strong>.</li><li><strong>Headers</strong>—You can use headers to define the field names in your data. Select the way headers are defined in your data from the following options: <ul><li><strong>First row of file is header</strong>—select this option if your CSV file includes filed headers on the first line</li><li><strong>System assigned header</strong>—select this option to allow Pivotal AX to automatically name the fields</li><li><strong>User defined</strong>—the system prompts you for field names</li><li><strong>External header file</strong>—the system prompts you for a CSV-formatted header file that defines the field name.</li></ul></li></ul><p>See <a href="#DataSourceManagementGuide-Treatingfilecontentsassingle-lineevents">Treating file contents as single-line events</a>.</p></td></tr><tr><td class="confluenceTd" colspan="1">Excel</td><td class="confluenceTd" colspan="1"><p>Select this format to upload files in Microsoft Excel format. The files should be basic spreadsheets that do not contain graphics and have a well-formed row and column structure that can be exported to the CSV format. The first row of the worksheet should contain field names for the columns.</p><p>You can upload an Excel workbook file that contains multiple spreadsheets. Each spreadsheet is processed as a separate file.</p></td></tr><tr><td class="confluenceTd" colspan="1">OpenTSDB</td><td class="confluenceTd" colspan="1">Select this format for time-series data that uses the OpenTSDB format of Hadoop HBase.</td></tr><tr><td class="confluenceTd">Syslog</td><td class="confluenceTd">Select this format for data compliant with the Syslog format, as specified in RFC 3164 or RFC 5424.</td></tr><tr><td class="confluenceTd">Log4j</td><td class="confluenceTd"><p>Select this format for data compliant with the Apache Log4j format (using any of the many predefined patterns supported).</p></td></tr><tr><td class="confluenceTd">JSON</td><td class="confluenceTd"><p>Select this format for data compliant with the JavaScript Object Notation (JSON) format.</p><p>See <a href="#DataSourceManagementGuide-Treatingfilecontentsassingle-lineevents">Treating file contents as single-line events</a>.</p></td></tr><tr><td class="confluenceTd" colspan="1">TEXT</td><td class="confluenceTd" colspan="1"><p>Select this format for unstructured textual data.</p><p>See <a href="#DataSourceManagementGuide-Treatingfilecontentsassingle-lineevents">Treating file contents as single-line events</a> .</p></td></tr><tr><td class="confluenceTd" colspan="1">vShield</td><td class="confluenceTd" colspan="1">Select this format to upload log files from VMware vShield servers.</td></tr><tr><td class="confluenceTd" colspan="1">XML</td><td class="confluenceTd" colspan="1">Select this format for XML-formatted data.</td></tr></tbody></table></div><p>The data processing applied to your data source is determined by the data format you select. If you specify a data format for a file that is not compliant with that format, the data is still  processed, but with much less accuracy, depending on your actual selection.</p><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-multiline"></span></p><h3 id="DataSourceManagementGuide-Treatingfilecontentsassingle-lineevents">Treating file contents as single-line events</h3><p>For the CSV, JSON, and TEXT data sources, de-select the <strong>Treat file contents as single-line events</strong>  if your data spans multiple lines. </p><p>When checked, input files processed using MapReduce inside Hadoop are initially split into multiple sub-files and each sub-file is processed independently for parallelization.  The splits occur using a newline as the event/record boundary. Although this is correct in most formats such as CSV and single-line JSON, this will not be correct in cases where events/records span across multiple lines.</p><h3 id="DataSourceManagementGuide-AboutCompressedFiles">About Compressed Files</h3><p>You can upload your files as uncompressed plain text, or as compressed data in any of the following formats (or their common combinations):</p><ul><li><code>BZIP2</code> (<code>bz2</code>)</li><li><code>GZIP</code> (<code>gz</code>)</li><li><code>JAR</code></li><li><code>LZO</code></li><li><code>ZIP</code></li><li><code>TAR</code></li><li>GZipped <code>TAR</code> (<code>.tar.gz</code>)</li></ul><p>Note the following regarding compression:</p><ul><li>To upload compressed archives containing files that have different formats (any of the supported formats, as listed above), use the <strong>Autodetect</strong> option.</li><li>If you select a data format (any available option other than <strong>Autodetect</strong>), all the files in the compressed archive are processed as compliant with that format.</li><li>The compression format of each file is automatically detected according to the file's contents, therefore you can use any file name or extension.</li></ul><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-extraction"></span></p><h2 id="DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</h2><p>When prompted, choose one of the following <strong>Extraction and Data Quality Rules</strong>:</p><ul><li><strong>Retain raw event</strong>—In addition to normal processing, raw events are also retained "as is" (This is only useful if you plan to do searches on the original events).</li><li><strong>Enable Data Quality Control</strong>—You can include or exclude events using a regular expression. When you select this option, two text boxes display where you can enter text to either drop or accept events that match the expression. Select the radio button to <strong>Accept</strong> or <strong>Drop</strong> events.  </li><li><strong>Field Extraction Rules</strong>—You can extract data from a data set into a new file using a regular expression. Enter values for the name of the field and the expression and click <strong>Add Rule</strong>. You can add multiple rules.</li></ul><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-updaterules"></span></p><h2 id="DataSourceManagementGuide-UpdateRules">Update Rules</h2><p>When prompted, select one of the following <strong>Update Rules</strong>:</p><ul><li><strong>Regular</strong>—New data is added to the end of the existing data and does not update or replace previously loaded data. If the data source name exactly matches the name of a previously loaded data source, all data is replaced with the new data. </li><li><strong>Update</strong>—If the keys match, the old data is updated with the new data in the upload. A text box displays where you can define one or more key fields. Click <strong>Add another key</strong> to enter a additional keys. Click the minus sign to remove a key. </li></ul><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-scheduling"></span></p><h2 id="DataSourceManagementGuide-SchedulingOptions">Scheduling Options</h2><p>The following options are available when scheduling data sources:</p><ul><li><strong>Run-immediately</strong>—Upload the file now, and do not repeat the upload.</li><li><strong>Hourly</strong>—Upload the file every hour or at an interval of hours that you specify. A set of fields display to schedule when and how often the upload occurs. You can also specify a start and end date.  </li><li><strong>Daily</strong>—Upload the file every day or at an interval of days that you specify. A set of fields display to schedule when and how often the upload occurs. You can also specify a start and end date.  </li><li><strong>Weekly</strong>—Upload the file every week or specify an interval of weeks. You can also specify the day of the week when the upload occurs. A set of fields display to schedule when and how often the upload occurs. You can also specify a start and end date.  </li><li><strong>Monthly</strong>—Upload the file every month or at an interval of months that you specify. A set of fields display to schedule when and how often the upload occurs. You can also specify a start and end date.  </li></ul><h1 id="DataSourceManagementGuide-AddingDataSources">Adding Data Sources</h1><p>To add a data source:</p><ol><li><p>Log in to Pivotal AX and click <strong>Data Sources</strong> in the left menu. <br/> The <strong>Add Data Sources</strong> menu displays:</p><p><img class="confluence-embedded-image" data-image-src="attachments/62620469/64192568.png" src="attachments/62620469/64192568.png"/></p></li><li>Follow the procedures below to add any of the following data sources:<ul><li><a href="#DataSourceManagementGuide-UploadFiles">Upload Files</a></li><li><a href="#DataSourceManagementGuide-LiveFeeds">Live Feeds</a></li><li><a href="#DataSourceManagementGuide-AmazonS3">Amazon S3</a></li><li><a href="#DataSourceManagementGuide-HDFS">HDFS</a></li><li><a href="#DataSourceManagementGuide-FTPSFTP">FTP or SFTP</a></li><li><a href="#DataSourceManagementGuide-GemFire">GemFire</a></li><li><a href="#DataSourceManagementGuide-ApplicationFeed">Application Feed</a></li></ul></li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-uploadfiles"></span></p><h2 id="DataSourceManagementGuide-UploadFiles">Upload Files</h2><p>The <strong>Upload Files</strong> data source allows you to  directly upload files from your local computer. </p><p>To upload files:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Click <strong>Upload File</strong> from the <strong>Add Data Sources</strong> menu.<br/> The <strong>Add Source</strong> tab displays.</li><li>Drag and drop one or more files into the grey box or click <strong>Choose Files</strong> to open a file browser.<br/>The file uploads to Pivotal AX and displays a progress meter. When the upload is complete you will see a green checkmark icon and the file uploaded message.</li><li>After the files are uploaded, click <strong>Next.<br/> </strong>The <strong>Data Format and Type</strong> options display.<strong> </strong>You can click the <strong>Preview</strong> button to view the raw data. </li><li>Select a data format and type, or select <strong>Autodetect</strong>.<strong> </strong>You can choose any of the data formats listed in the <a href="#DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</a> table. </li><li>Click <strong>Next.</strong></li><li>(Optional) Select an<strong> Extraction and Data Quality Rules</strong> option.<br/>See <a href="#DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</a>.</li><li>Click <strong>Next</strong>.</li><li>Select an <strong>Update Rule</strong>.<br/> See <a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a>.</li><li>(Optional) Click <strong>Preview</strong> to view the data set you are loading.</li><li>Click <strong>Done</strong>. <br/>The data uploads and processing begins. You can view the status of your uploads on the <strong>Data Feeds tab</strong>. <br/> <img class="confluence-embedded-image" data-image-src="attachments/62620469/64192525.png" src="attachments/62620469/64192525.png" width="700"> <br/>Click <strong>Details</strong> for additional status information.  <br/>Click the <strong>Trash</strong> icon to delete the data source.<br/>Click  the red <strong>Stop</strong> icon to stop processing the data.<br/> <br/>When the processing of the uploaded file is complete, a notification displays. </img></li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-livefeeds"></span></p><h2 id="DataSourceManagementGuide-LiveFeeds">Live Feeds</h2><p>The <strong>Live Feeds</strong> data source option allows you to stream data from log files in formats such as log4j or JSON.</p><p>To add a <strong>Live Feed</strong> data source:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Select <strong>Live Feeds</strong> from the <strong>Add Data Sources</strong> menu.</li><li>Enter a name for the data source in the <strong>Source Name</strong> field.</li><li>Click <strong>Next</strong>.</li><li>Select a <strong>Data Format and Type</strong>.<br/>See <a href="#DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</a>.</li><li>(Optional) Select an <strong>Extraction and Data Quality Rules</strong> option <br/>See <a href="#DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</a>.</li><li>Click <strong>Next</strong>.</li><li>Select an <strong>Update Rule</strong>.<br/>See <a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a>. </li><li>(Optional) Click <strong>Preview</strong> to view the data set you are loading.</li><li>Click <strong>Done</strong>.</li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-amazons3"></span></p><h2>Amazon S3</h2><p>You can add data sources that are stored in Amazon S3 cloud storage service. Before configuring an S3 data source, you must obtain the following information from your S3 environment:</p><ul><li>Access Key</li><li>Secret Key</li><li>S3 Root URL</li></ul><p>To add an Amazon S3 data source:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Select <strong>Amazon S3</strong> from the <strong>Add Data Sources</strong> menu.</li><li>Enter your <strong>Access Key </strong>and <strong>Secret Key.</strong></li><li>In the <strong>S3 Root </strong>field, enter the URL to your Amazon S3 root.</li><li>Click <strong>Browse</strong> to locate the file in the S3 filesystem.<br/> <img class="confluence-embedded-image" data-image-src="attachments/62620469/65733048.png" src="attachments/62620469/65733048.png" width="500"> </img></li><li>Click <strong>Next</strong>.</li><li>Select a data format from the drop-down list or select <strong>Autodetect</strong>. See <a href="#DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</a>. <br/>You can click the <strong>Preview</strong> button to view the raw data you are uploading.</li><li>(Optional) Select an <strong>Extraction and Data Quality Rules</strong> option <br/>See <a href="#DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</a>.</li><li>Click <strong>Next</strong>.</li><li>Select an <strong>Update Rule</strong>.<br/>See <a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a>. </li><li>(Optional) Click  <strong>Preview</strong> to view the data set you are loading.</li><li>Click <strong>Next.</strong></li><li>In the <strong>Repeats</strong> drop-down list, select a schedule option. Your file will upload automatically using the schedule you specify. See <a href="#DataSourceManagementGuide-SchedulingOptions">Scheduling Options</a>.</li><li>If you selected a scheduling option other than <strong>Run-immediately</strong>, select <strong>Incremental Processing</strong> to load only new data. </li><li>Click <strong>Done</strong>. <br/>The data uploads and processing begins. You can view the status of your uploads on the <strong>Data Feeds tab</strong>. </li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-hdfs"></span></p><h2 id="DataSourceManagementGuide-HDFS">HDFS</h2><p>To add data stored in a Hadoop file system:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Select <strong>HDFS</strong> from the <strong>Add Data Sources</strong> menu.</li><li>Select the type of Hadoop distribution where your data is stored. Chose one of the following options:<ul><li>Pivotal Hadoop Distribution 1.0</li><li>Cloudera Distribution for Hadoop 3</li><li>Cloudera Distribution for Hadoop 4</li></ul></li><li>Enter the <strong>HDFS Root</strong>. </li><li>Click the <strong>Browse</strong> button to select a file for uploading.</li><li>Select the <strong>Hadoop Processing</strong> option to process the data on the Hadoop cluster where the data source resides. If you do not select this option, processing occurs only on Pivotal Analytic nodes, which may reduce performance.</li><li>Select the <strong>Auto Summarize</strong> option to automatically summarize events:<ul><li>When this option is selected, individual events are not indexed, but the resulting metadata size is much smaller.</li><li>When this option is not selected, individual events are indexed and will require provisioning of sufficient storage for metadata.</li></ul></li><li>Click <strong>Next</strong>.</li><li>Select a <strong>Data Format and Type</strong> from the drop-down list or select  <strong>Autodetect</strong> . See <a href="#DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</a> .</li><li>The <strong>Treat file contents as single-line events</strong>  option is available. See <a href="#DataSourceManagementGuide-Treatingfilecontentsassingle-lineevents">Treating file contents as single-line events</a>. </li><li>(Optional) Select an <strong>Extraction and Data Quality Rules</strong> option <br/> See  <a href="#DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</a> .</li><li>Click <strong>Next</strong> .</li><li>Select <strong>Update Rules</strong> .<br/> See  <a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a> .</li><li>In the  <strong>Repeats</strong>  drop-down list, select a schedule option. Your file will upload automatically using the schedule you specify. See  <a href="#DataSourceManagementGuide-SchedulingOptions">Scheduling Options</a>.</li><li>Click <strong>Done</strong> . </li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-ftp"></span></p><h2 id="DataSourceManagementGuide-FTPSFTP">FTP or SFTP</h2><p>To upload data from files stored on FTP or SFTP sources:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Select <strong>FTP/SFTP</strong> from the <strong>Add Data Sources</strong> menu.</li><li>Select the type of file transport from the <strong>FTP/SFTP</strong> drop-down list, either FTP or SFTP.</li><li>Enter the <strong>Username</strong> for access to the FTP or SFTP account.</li><li>Enter the <strong>Password</strong> for access to the FTP or SFTP account.</li><li>Enter the FTP root directory URL.</li><li>Click the <strong>Browse</strong> button to select to the file you want to upload. </li><li>Select a <strong>Data Format and Type</strong> from the drop-down list or select <strong>Autodetect</strong>. See <a href="#DataSourceManagementGuide-DataUploadFormats">Data Upload Formats</a>.</li><li>Click <strong>Next</strong>. <br/>You can click <strong>Preview</strong> to view the raw data you are uploading.</li><li>(Optional) Select an <strong>Extraction and Data Quality Rules</strong> option.<br/>See <a href="#DataSourceManagementGuide-ExtractionandDataQualityRules">Extraction and Data Quality Rules</a>.</li><li>Click <strong>Next</strong>.</li><li>Select <strong>Update Rules</strong>.<br/>See <a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a>.</li><li>Click <strong>Next</strong>. </li><li>In the <strong>Repeats</strong> drop-down list, select a schedule option. Your file will upload automatically using the schedule you specify. See  <a href="#DataSourceManagementGuide-SchedulingOptions">Scheduling Options</a> .</li><li>Click <strong>Done</strong>.</li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-gemfire"></span></p><h2 id="DataSourceManagementGuide-GemFire">GemFire</h2><p>You can add a data sources that retrieves data from a Pivotal GemFire region. Consult the GemFire documentation for more information about data access in GemFire.</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Select <strong>GemFire Source</strong> from the <strong>Add Data Sources</strong> menu.</li><li>Enter a name for the source (for internal reference only) in the <strong>Source Name</strong> field. </li><li>Enter the host name of the GemFire installation in the <strong>GemFire Server Host</strong> field.</li><li>Enter the port number of the GemFire installation in the <strong>GemFire Server Port</strong> field.</li><li>Select the type of query from the following options:<ul><li><strong>Continuous Query</strong>—Enter a query string for a GemFire continuous query.</li><li><strong>One Time Query</strong>—Enter a query string for a query that is performed immediately. </li><li><strong>Register for Events by regular expression</strong>—Enter a <strong>Region Name</strong> and a <strong>Regular Expression</strong> </li></ul></li><li>In the <strong>Repeats</strong> drop-down list, select a schedule option. Your file will upload automatically using the schedule you specify. See <a href="#DataSourceManagementGuide-SchedulingOptions">Scheduling Options</a> .</li><li>Click <strong>Done</strong>.</li></ol><p><span class="confluence-anchor-link" id="DataSourceManagementGuide-applicationfeed"></span></p><h2 id="DataSourceManagementGuide-ApplicationFeeds">Application Feeds </h2><p>You can add data from running applications by coding those applications to send event messages to Pivotal AX. You define a data source in Pivotal AX and the system provides you with snippets of application code you can embed in your applications to send the event messages. Code is available for the following environments:</p><p> </p><ul><li><strong>JavaScript API</strong>—Use the Pivotal AX JavaScript API to write code that tracks the data you want to analyze.</li><li><strong>JavaScript Page Visit Event</strong>—Use this option to track page views. Event data includes URLs visited, Page Title, Session Analysis, screen resolution, browser, and operating system information.  </li><li><strong>JavaScript Page DOM Click Event</strong>—Use this option to track mouse click events. </li><li><strong>JavaScript eCommerce Event</strong>—Use this option to track ecommerce activities. Event data includes shopping carts, products, and custom variables. </li><li><strong>JavaScript Game Tracking Event</strong>—Use this option to track user activites while playing a game, for example, advancing levels, invitations to friends, and purchasing of virtual goods.</li><li><strong>JavaScript User Action Event</strong>—Use this option to track user actions on a site. </li><li><strong>JavaScript Custom Event</strong>—Use this option to track custom events that you define. </li><li><strong>REST API</strong>—You can write custom code using a REST API to send application events to Pivotal AX. </li></ul><p>To configure an <strong>Application Feed</strong>:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Select <strong>Application Feed</strong> from the <strong>Add Data Sources</strong> menu.</li><li>Enter a name for the application feed in the <strong>Application Name</strong> field.</li><li>Enter the URL of the application in the <strong>URL</strong> field.</li><li>(Optional) Enter a description of the application in the <strong>Description</strong> field.</li><li>Select the type of application. (The selection is for reference purposes only.)<br/>You can choose from:<ul><li>WEB</li><li>MOBILE</li><li>FACEBOOK</li><li>DESKTOP</li><li>UNKNOWN</li></ul></li><li>Click <strong>Next</strong>.</li><li>Select an <strong>Update Rule</strong>.<br/>See <a href="#DataSourceManagementGuide-UpdateRules">Update Rules</a>.  </li><li>Click <strong>Done</strong>.<br/>The<strong> Application Details</strong> screen displays. </li><li>Select the <strong>JavaScript</strong> tab and event type to copy application tracking code for any of the listed events. You can paste this code into your application. <br/>You can also select the <strong>REST API</strong> tab for information about adding Web services code using the REST API. You can also access the API key from this page. </li><li>(Optional) Click <strong>Preview</strong> to preview the data from the application feed.</li><li>Click <strong>Close</strong>.</li></ol><h1 id="DataSourceManagementGuide-ResettingAllDataSources">Resetting All Data Sources</h1><p>You can reset all data sources so that the indexes are cleaned up. </p><p>To reset data sources:</p><ol><li>Log in to Pivotal AX.</li><li>Select <strong>Data Sources</strong> from the left menu.</li><li>Click the <strong>Reset All Data Sources</strong> link.</li></ol><h1 id="DataSourceManagementGuide-DataIngestionAPIs">Data Ingestion APIs</h1><p>The Data Ingestion APIs are provided in the form of either a set of SDKs for various languages or RESTful APIs for integration of any client that can follow the RESTful API model. A summary of the APIs that can be used for ingestion are listed below (click on the corresponding link for more information):</p><ul><li><a href="JavaScriptDataIngestSDK.html">Data Ingestion JavaScript SDK</a></li><li><a href="DataIngestionRESTfulAPIs.html">Data Ingestion RESTful APIs</a></li><li><a href="DataIngestionSDKJava.html">Data Ingestion Java SDK</a></li></ul>
+</div></div>
+   
+<div style="clear: both"></div>
+<div id="footer-1">
+<table style="width:100%; background-color: #01786E">
+<tr>
+<td></td>
+</tr>
+<tr>
+<td height="50" width="5%"></td>
+<td height="50 width:75%;text-align: left; font-size: x-small">
+<span id="footer-links" style="color: #FFFFFF"><a href=
+"http://www.gopivotal.com/about-pivotal/contact-us">Contact Us</a>
+| <a href="http://www.gopivotal.com/privacy-policy">Private
+Policy</a> | <a href="http://www.gopivotal.com/terms-of-use">Terms
+of Use</a></span></td>
+<td height="50" width="40%"></td>
+<td height="50"><span id="copyright" style=
+"width: 75%;text-align: left; font-size: small; color: #FFFFFF;">2013
+GoPivotal, Inc. All rights reserved.</span></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

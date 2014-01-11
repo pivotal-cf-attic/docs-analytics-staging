@@ -132,34 +132,13 @@ Pivotal AX</span></td>
 
 </div></div>
 		<! Replace div-main>
-<div id ="main">
+<div id ="main"><h1>    Deploying the Pivotal CF Operations Manager Virtual Machine</h1><div class="wiki-content group" id="main-content">
 
-                    <h1 id="PivotalAXVersion1.0-AboutPivotalAX">About Pivotal AX</h1><p>Pivotal AX is an on-premise analytics platform that runs on the Pivotal Cloud Foundry platform and uses a Pivotal HD deployment for data analysis. It is a software component of the Pivotal One product suite that provides business analysts with tools to analyze business data. Analysts can analyze data in real time with data coming from sources such as live application feeds, Syslog feeds, static files, Pivotal GemFire queries, Amazon S3, or HDFS. <span style="background-color: transparent;font-size: 14.0px;line-height: 1.4285715;">Pivotal AX requires an on-site deployment of a Pivotal HD cluster. An API is available for integration with external applications.</span></p><p><img class="confluence-embedded-image" width="500" src="attachments/61221666/62783584.png" data-image-src="attachments/61221666/62783584.png"></p><p> </p><p>A Pivotal AX installation uses the following components:</p><ul><li>Pivotal Cloud Foundry</li><li>VMware vSphere</li><li>VMware ESXi </li><li>Pivotal AX Virtual Machines—a Pivotal AX installation uses a set of virtual machines that collect data, analyze data, display data visualizations, and manage the system. These virtual machines include:<br /><ul><li>Management nodes</li><li>Messaging nodes</li><li>Query nodes</li><li>Compilation nodes</li><li>Storm </li><li>Zabbix </li></ul></li><li>Pivotal AX Web interface—a Web application used to configure the data sources for analysis and to visualize the data using charts and reports.</li><li>Pivotal HD (Hadoop). A Pivotal HD installation is required for use with Pivotal AX and includes the following components: <br /><ul><li>HDFS—a fault tolerant distributed file system that is designed to run on commodity hardware.</li><li>Hive—a data warehouse infrastructure that provides an interface similar to SQL on top of Hadoop. </li><li>HBase—a distributed, column-oriented database that uses HDFS for storing data.</li><li>Jobtracker—manages MapReduce jobs</li><li>YARN—a framework that facilitates writing distributed processing frameworks and applications and supports MapReduce version 2.</li></ul></li></ul><p>See <a href="http://gopivotal.com/products/pivotal-hd" class="external-link" rel="nofollow">Pivotal HD Documentation</a>.</p><h1 id="PivotalAXVersion1.0-PivotalAXDocumentation">Pivotal AX Documentation</h1><p>The following documentation resources are available:</p><ul><li><a href="InstallationGuide.html">Installation Guide</a></li><li><a href="AdministrationGuide.html">Administration Guide</a></li><li><a href="DataSourceManagementGuide.html">Data Source Management Guide</a></li><li><a href="DataVisualizationGuide.html">Data Visualization Guide</a></li></ul><p> </p>
-                    </div>
+                    <p>In this section, you deploy a VMware OVF template to create the Pivotal CF Operations Manager virtual machine. This virtual machine runs the Pivotal CF Operations Manger application that you will use to provision the virtual machines for Pivotal AX and to install Pivotal AX software. </p><p>You perform these steps from within the VMware vSphere Web client that is connected to your vSphere environment.  </p><ol><li>Using the <strong>VMware vSphere</strong> Web client, log in to your vSphere environment.</li><li>Select the <strong>Hosts and Clusters</strong> view.</li><li>Right-click on the data center and select <strong>Deploy OVF template</strong>.</li><li>Select <strong>Local File</strong> and click the <strong>Browse</strong> button to open a file browser.</li><li>Browse to the ova template you received with your Pivotal AX software and click <strong>Next</strong>.</li><li>Verify the OVF template details and click <strong>Next</strong>.</li><li>Accept the license agreement and click <strong>Next</strong>.<br />The <strong>Select Name and Folder </strong>screen displays.  </li><li>Enter a name for the virtual machine, such as Pivotal CF.</li><li>Select the data center from the list. </li><li>Click <strong>Next</strong>.<br /> The <strong>Disk Format</strong> screen displays and shows the name of the datastore you created.</li><li>Select the datastore.</li><li>Select <strong>Thick Provision Lazy Zero</strong> and click <strong>Next</strong>.<br />The <strong>Network Mapping</strong> screen displays.  </li><li>Select a destination network and click <strong>Next</strong>. <br />If you have defined a vlan or other networking,  select that networking destination. Otherwise, select the default, <strong>VM Network</strong>. <br />The <strong>Properties</strong> screen displays. </li><li>Enter the <strong>IP Address</strong>, <strong>Netmask, </strong> <strong>Default Gateway</strong>, and <strong>DNS</strong> fields with the appropriate entries for your networking environment.</li><li>Enter and confirm the <strong>Admin Password</strong> for this virtual machine and click <strong>Next</strong>.<br />The username for this VM is <strong>tempest.</strong> Use this username and the Admin password for SSH access to the Pivotal CF Operations Manager virtual machine. <br />The <strong>Ready to Complete</strong> screen displays.</li><li><p>Select <strong>Power on after deployment </strong>and click <strong>Finish</strong>.<br />vCenter deploys and starts the virtual machine. This may take up to 15 minutes to complete.</p></li><li>Continue with the installation procedure using the <strong>Pivotal CF Operations Manager</strong> Web application.<p>See <a href="ConfiguringPivotalCFOperationsManagertoInstallPivotalAX.html">Configuring Pivotal CF Operations Manager to Install Pivotal AX</a>.</p></li></ol>
 
-                                        <div class="pageSection group">
-                        <div class="pageSectionHeader">
-                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
-                        </div>
 
-                        <div class="greybox" align="left">
-                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
-                                <a href="attachments/61221666/62783586.png">PA_block_diagram.png</a> (image/png)
-                                <br/>
-                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
-                                <a href="attachments/61221666/65733052.png">PA_block_diagram.png</a> (image/png)
-                                <br/>
-                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
-                                <a href="attachments/61221666/64192964.png">PA_system_arch.png</a> (image/png)
-                                <br/>
-                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
-                                <a href="attachments/61221666/62783584.png">PA_block_diagram.png</a> (image/png)
-                                <br/>
-                                                    </div>
-                    </div>
-                    
-                 
-                </div>             </div>
+</div> </div>
+
    
 <div style="clear: both"></div>
 <div id="footer-1">
