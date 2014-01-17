@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>Configuring Pivotal CF Operations Manager to Install Pivotal AX | Pivotal CF Docs</title>
+
+  <link href="../stylesheets/master.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/breadcrumbs.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/search.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/portal-style.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/printable.css" media="print" rel="stylesheet" type="text/css" />
+
+  <script src="../javascripts/all.js" type="text/javascript"></script>
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+</head>
+
+<body class="pivotalax pivotalax_ConfiguringPivotalCFOperationsManagertoInstallPivotalAX">
+<div class='wrap'>
+  <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      try {
+          Typekit.load();
+      } catch (e) {
+      }
+  </script>
+  <script type="text/javascript">
+      document.domain = "gopivotal.com";
+  </script>
+  <header class="navbar desktop-only" id="nav">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <div class="pivotal-logo--container">
+                <a class="pivotal-logo" href="http://gopivotal.com"><span></span></a>
+            </div>
+
+            <ul class="nav pull-right">
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/paas" id="paas-nav-link">PaaS</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/big-data" id="big-data-nav-link">BIG DATA</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/agile" id="agile-nav-link">AGILE</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/oss" id="oss-nav-link">OSS</a>
+                </li>
+                <li class="nav-search">
+                    <a href="http://www.gopivotal.com/search-pivotal"><span></span></a>
+                </li>
+            </ul>
+        </div>
+        <a href="http://www.gopivotal.com/contact">
+            <img id="get-started" src="http://www.gopivotal.com/sites/all/themes/gopo13/images/get-started.png">
+        </a>
+    </div>
+  </header>
+  <div class="main-wrap">
+    <div class="container-fluid">
+      <div class="container">
+        <div id="sub-nav" class="nav-container desktop-only">
+          <ul class="menu">
+            <li class="first expanded js-maintopic"><a id='home-nav-link' href="/pivotalax/index.html">Home</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/PivotalAXVersion1_0.html">Overview of Pivotal Analytics</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/InstallationGuide.html">Installation Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/AdministrationGuide.html">Administration Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataSourceManagementGuide.html">Data Source Management Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataVisualizationGuide.html">Data Visualization Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataIngestionAPIs.HTML">Data Ingestion APIs</a></li>
+          </ul>
+        </div><!--end of sub-nav-->
+        <div class="body-container content">
+
+          <!-- Google CSE Search Box -->
+          <script>
+              (function() {
+                  var cx = '005804290371689664731:n1ix15a_ysy';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                          '//www.google.com/cse/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+              })();
+          </script>
+          <gcse:search></gcse:search>
+
+          <ul class="breadcrumbs"><li><a href="./">Pivotal AX Version 1.0 Documentation</a></li> <li class="active"><span>Configuring Pivotal CF Operations Manager to Install Pivotal AX</span></li></ul>
+
+          <h3 class="title-container">Configuring Pivotal CF Operations Manager to Install Pivotal AX</h3>
+
+          
+
+
+          <p>Follow these steps to configure the Pivotal CF Operations Manager. This application runs in the VM you created in the previous installation steps, which you must complete before completing the steps in this section. See <a href="DeployingthePivotalCFOperationsManagerVirtualMachine.html">Deploying the Pivotal CF Operations Manager Virtual Machine</a>.</p>
+
+<p> </p>
+
+<ol>
+<li><p>Open a Web browser to the IP address assigned to the Pivotal CF Operations Manager Virtual machine.</p>
+
+<p>The Pivotal CF Logon page displays. </p>
+
+<blockquote>
+<p><img src="images/first_login.png" /></p>
+</blockquote></li>
+<li><p>Enter the credentials for the administrative user and click  <strong>Create Admin User</strong>.</p>
+
+<p>The Pivotal CF Operations Manager <strong>Product Dashboard</strong> page displays.  </p></li>
+<li><p>In the VMware vSphere box, click <strong>Configure</strong>.</p>
+
+<p>The <strong>VMware vSphere</strong> configuration page displays:
+ <img src="images/vsphere_config.png" /></p></li>
+<li><p>Select <strong>vCenter credentials </strong> and enter the following user information:</p>
+
+<blockquote>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>IP Address</td>
+<td>IP address of the vCenter server where your Pivotal AX virtual machines will be created</td>
+</tr>
+<tr>
+<td>User Name</td>
+<td>User name for access to the vCenter server. The user should have privileges to create and delete virtual machines and folders</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Password for access to the vCenter server</td>
+</tr>
+</tbody></table>
+</blockquote></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+<li><p>Select <strong>vSphere configuration</strong>. </p>
+
+<p>Enter the following newtorking information from your vSphere configuration: </p>
+
+<blockquote>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Network Name</td>
+<td>The name of the Network as defined in your vSphere configuration</td>
+</tr>
+<tr>
+<td>Datacenter Name</td>
+<td>The name of the datacenter as defined in your vSphere configuration</td>
+</tr>
+<tr>
+<td>Cluster Name</td>
+<td>The name of the Cluster as defined in your vSphere configuration</td>
+</tr>
+<tr>
+<td>Datastore Name</td>
+<td>The name of the datastore as defined in your vSphere configuration</td>
+</tr>
+<tr>
+<td>Resource Pool Name</td>
+<td>(Optional) The resource pool where you will deploy Cloud Foundry</td>
+</tr>
+</tbody></table>
+</blockquote></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+<li><p>Select <strong>Network configuration</strong> and enter the following network information. Operations Manager uses this information when creating the virtual machines for your Pivotal AX installation. </p>
+
+<blockquote>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Subnet</td>
+<td>A valid range of IP addresses that vSphere can use to provision virtual machines. Use CIDR notation to enter the range. For example: <code>172.16.64.1/24</code></td>
+</tr>
+<tr>
+<td>Reserved IP Ranges</td>
+<td>A list of IP addresses that you do not want provisioned by vSphere. List the IP addresses separated by commas. You can also specify a range of addresses. For example, the following entry: <code>172.16.64.1-172.16.64.3</code> excludes the following IP addresses: <code>172.16.64.1</code>, <code>172.16.64.2</code>, and <code>172.16.64.3</code></td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>One or more valid Domain Name Servers to be used by the provisioned virtual machines</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>Gateway to be used by the provisioned virtual machines</td>
+</tr>
+</tbody></table>
+</blockquote></li>
+<li><p>Select <strong>NTP Server</strong>  to configure a Network Time Protocol (NTP) server. Setting an NTP server provides consistent and valid time stamps for event data. Enter the IP addresses or host names of one or more NTP servers, separated by commas. </p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+<li><p>Select <strong>Resource sizes</strong> and click <strong>Save</strong> to accept the default values.</p></li>
+<li><p>Click <strong>Install.</strong>  </p>
+
+<p>The Pivotal CF installation begins. You can click the <strong>Show Verbose Output</strong> link to view the progress of the installation.</p></li>
+<li><p>Click  <strong>Go To Main Page</strong>.</p>
+
+<p>The Pivotal CF Operations Manager <strong>Product Dashboard</strong> page displays again:
+ <img src="images/dashboard.png" /></p></li>
+<li><p>Click <strong>Add a new product</strong> . </p>
+
+<p>The <strong>Add Products</strong> screen displays.</p></li>
+<li><p>In the <strong>Upload a Product</strong> box, click <strong>Choose File</strong>. </p>
+
+<p>A file browser window opens. </p></li>
+<li><p>Browse to the zip file containing your Pivotal AX software. (for example, <code>pax-1.0.0.0.zip</code>) and click <strong>Open</strong>. </p></li>
+<li><p>In the <strong>Upload a Product</strong> tile, click <strong>Add</strong>.</p>
+
+<p>The components are uploaded to the Pivotal CF Operations Manager virtual machine. 
+When the upload completes, the Pivotal AX Settings page displays.</p></li>
+</ol>
+
+<p>In the next steps, you configure your Pivotal AX installation and its connection to the Pivotal HD cluster.</p>
+
+<p>If your Pivotal HD deployment was installed using Pivotal Command Center, continue with the steps in <a href="PreparingyourPivotalHDDeploymentforPivotalAX.html">Preparing your Pivotal HD Deployment for Pivotal AX</a>. After completing those steps, follow the steps in <a href="ConfiguringPivotalAX.html">Configuring Pivotal AX</a>.</p>
+
+<p>If your Pivotal HD deployment was not installed using Pivotal Command Center, continue with the steps in <a href="ConfiguringPivotalAX.html">Configuring Pivotal AX</a>.</p>
+
+
+        </div><!-- end of body-container content-->
+      </div><!-- end of container -->
+    </div><!--end of container-fluid-->
+  </div><!--end of main-wrap-->
+
+  <div class="site-footer desktop-only">
+      <div class="container-fluid">
+          <div class="site-footer-links">
+              <span class="version"><a href='/'>Pivotal Documentation</a></span>
+              <span>&copy;
+                  <script>
+                      var d = new Date();
+                      document.write(d.getFullYear());
+                  </script>
+                  <a href='http://gopivotal.com'>Pivotal Software</a> Inc. All Rights Reserved.
+              </span>
+          </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+      (function() {
+          var didInit = false;
+          function initMunchkin() {
+              if(didInit === false) {
+                  didInit = true;
+                  Munchkin.init('625-IUJ-009');
+              }
+          }
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+          s.onreadystatechange = function() {
+              if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                  initMunchkin();
+              }
+          };
+          s.onload = initMunchkin;
+          document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+  </script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39702075-1']);
+    _gaq.push(['_setDomainName', 'gopivotal.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>Data Ingestion Java SDK | Pivotal CF Docs</title>
+
+  <link href="../stylesheets/master.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/breadcrumbs.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/search.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/portal-style.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/printable.css" media="print" rel="stylesheet" type="text/css" />
+
+  <script src="../javascripts/all.js" type="text/javascript"></script>
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+</head>
+
+<body class="pivotalax pivotalax_DataIngestionSDKJava">
+<div class='wrap'>
+  <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      try {
+          Typekit.load();
+      } catch (e) {
+      }
+  </script>
+  <script type="text/javascript">
+      document.domain = "gopivotal.com";
+  </script>
+  <header class="navbar desktop-only" id="nav">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <div class="pivotal-logo--container">
+                <a class="pivotal-logo" href="http://gopivotal.com"><span></span></a>
+            </div>
+
+            <ul class="nav pull-right">
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/paas" id="paas-nav-link">PaaS</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/big-data" id="big-data-nav-link">BIG DATA</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/agile" id="agile-nav-link">AGILE</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/oss" id="oss-nav-link">OSS</a>
+                </li>
+                <li class="nav-search">
+                    <a href="http://www.gopivotal.com/search-pivotal"><span></span></a>
+                </li>
+            </ul>
+        </div>
+        <a href="http://www.gopivotal.com/contact">
+            <img id="get-started" src="http://www.gopivotal.com/sites/all/themes/gopo13/images/get-started.png">
+        </a>
+    </div>
+  </header>
+  <div class="main-wrap">
+    <div class="container-fluid">
+      <div class="container">
+        <div id="sub-nav" class="nav-container desktop-only">
+          <ul class="menu">
+            <li class="first expanded js-maintopic"><a id='home-nav-link' href="/pivotalax/index.html">Home</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/PivotalAXVersion1_0.html">Overview of Pivotal Analytics</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/InstallationGuide.html">Installation Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/AdministrationGuide.html">Administration Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataSourceManagementGuide.html">Data Source Management Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataVisualizationGuide.html">Data Visualization Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataIngestionAPIs.HTML">Data Ingestion APIs</a></li>
+          </ul>
+        </div><!--end of sub-nav-->
+        <div class="body-container content">
+
+          <!-- Google CSE Search Box -->
+          <script>
+              (function() {
+                  var cx = '005804290371689664731:n1ix15a_ysy';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                          '//www.google.com/cse/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+              })();
+          </script>
+          <gcse:search></gcse:search>
+
+          <ul class="breadcrumbs"><li><a href="./">Pivotal AX Version 1.0 Documentation</a></li> <li class="active"><span>Data Ingestion Java SDK</span></li></ul>
+
+          <h3 class="title-container">Data Ingestion Java SDK</h3>
+
+          
+
+
+          <ul>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#event">Event class</a></li>
+<li><a href="#config">Config class</a></li>
+<li><a href="#cetasAgent">CetasAgent class</a></li>
+<li><a href="#example">Usage example</a></li>
+</ul>
+
+<p>The client-side Java API constitutes a set of simplified Java calls atop the Sun Jersey API, the standard implementation for Java-based RESTful web services. The data ingestion functionality is provided via the following classes:
+  </p>
+
+<h1><a id='classes'></a>Classes</h1>
+
+<table><thead>
+<tr>
+<th><strong>Class</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Event</code></td>
+<td>Encapsulates custom events to be submitted to the Pivotal AX Service</td>
+</tr>
+<tr>
+<td><code>Config</code></td>
+<td>Stores configuration information for initializing a client session to the Service</td>
+</tr>
+<tr>
+<td><code>CetasAgent</code></td>
+<td>REST client that models a locally stateful connection to the Pivotal AX Service</td>
+</tr>
+</tbody></table>
+
+<p>The API calls of the Event class are asynchronous (non-blocking) and are listed in the following table:
+  </p>
+
+<h1><a id='event'></a>Event class</h1>
+
+<table><thead>
+<tr>
+<th><strong>Event class API calls</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Event()</code></td>
+<td>Creates a new Event object, with the current time (epoch)</td>
+</tr>
+<tr>
+<td><code>set(Date date)</code></td>
+<td>Sets the event time to the specified date (using its epoch value)</td>
+</tr>
+<tr>
+<td><code>set(long time)</code></td>
+<td>Sets the event time to the specified epoch value</td>
+</tr>
+<tr>
+<td><code>set(String name, String value)</code></td>
+<td>Adds a new attribute &lt;name, value&gt; pair to the Event class</td>
+</tr>
+<tr>
+<td><code>set(Map\&lt;String, String\&gt;</code> attributes</td>
+<td>Adds all the specified &lt;name, value&gt; pairs to the Event attributes</td>
+</tr>
+<tr>
+<td><code>get(String name)</code></td>
+<td>Retrieves an existing event attribute with the specified name</td>
+</tr>
+</tbody></table>
+
+<p>The overloaded <code>set()</code> method of the Event class follows the Java builder pattern, i.e. it can be used in statements like the one below:</p>
+
+<pre><code class="theme: Confluence; brush: java; gutter: false style=&quot;font-size:12px;&quot;">event.set(date).set(&quot;name1&quot;, &quot;value1&quot;).set(&quot;name2&quot;, &quot;value2&quot;).set(map);
+</code></pre>
+
+<p>Where, presumably, &ldquo;event&rdquo; is an already instantiated object of the Event class and &ldquo;map&rdquo; is a reference to a <code>Map\&lt;String, String\&gt;</code> object containing a number of event attributes.
+ Events are sent from the client via a CetasAgent object, which is initialized using a Config object. This pattern is used for allowing the configuration of CetasAgent objects without having to modify the signature of the CetasAgent class constructor every time new parameters need to be added.
+ The API calls of the Config class are asynchronous (non-blocking) and are listed in the following table:</p>
+
+<h1><a id='config'></a>Config class</h1>
+
+<table><thead>
+<tr>
+<th><strong>Config class API calls</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Config()</code></td>
+<td>Creates a new Config object</td>
+</tr>
+<tr>
+<td><code>getDefaultInstance()</code></td>
+<td>Provides a singleton Config object with default values for all configuration parameters</td>
+</tr>
+<tr>
+<td><code>getCapacity()</code></td>
+<td>Returns the current capacity (maximum number of events to be buffered in a session)</td>
+</tr>
+<tr>
+<td><code>setCapacity(int)</code></td>
+<td>Sets a new capacity value, measured in events</td>
+</tr>
+<tr>
+<td><code>getTimeout()</code></td>
+<td>Returns the current session duration, in seconds</td>
+</tr>
+<tr>
+<td><code>setTimeout(int)</code></td>
+<td>Sets a new timeout value, measured in seconds</td>
+</tr>
+<tr>
+<td><code>getUpdateInterval()</code></td>
+<td>Returns the current update interval (number of seconds between session updates)</td>
+</tr>
+<tr>
+<td><code>setUpdateInterval(int)</code></td>
+<td>Sets a new update interval, measured in seconds</td>
+</tr>
+<tr>
+<td><code>getUserID()</code></td>
+<td>Returns ID of the active user</td>
+</tr>
+<tr>
+<td><code>setUserID(String)</code></td>
+<td>Sets the ID of the current user</td>
+</tr>
+<tr>
+<td><code>getUserName()</code></td>
+<td>Returns the name of the active user</td>
+</tr>
+<tr>
+<td><code>setUserName(String)</code></td>
+<td>Sets the name of the active user</td>
+</tr>
+</tbody></table>
+
+<p>As with the Event class, the <code>set()</code> methods of the Config class follow the Java builder pattern, i.e. they can be used in statements like:</p>
+
+<pre><code class="theme: Confluence; brush: java; gutter: false style=&quot;font-size:12px;&quot;">config.setCapacity(10).setUpdateInterval(1800);
+</code></pre>
+
+<p>Where, presumably, &ldquo;config&rdquo; is an already instantiated object of the Config class, in which a new capacity of 10 buffered objects and a new update interval of 30 minutes (30 x 60 = 1,800 seconds) is specified.
+ The communication of the client application with the Pivotal AX Service is conducted via a CetasAgent object, representing a single REST-based &ldquo;connection&rdquo; between the client and the Pivotal AX cloud. The connection is stateful on the client side and completely stateless on the server side, allowing for unlimited scalability.
+ The API calls of the CetasAgent class are asynchronous (non-blocking), apart from the synchronous (blocking) update() call, and are listed in the following table:</p>
+
+<h1><a id='cetasAgent'></a>CetasAgent class</h1>
+
+<table><thead>
+<tr>
+<th><strong>CetasAgent class API calls</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>CetasAgent(URL, key, config)</code></td>
+<td>Creates a new CetasAgent session object, initialized with the server URL, the application key and a set of configuration parameters</td>
+</tr>
+<tr>
+<td><code>log(Event)</code></td>
+<td>Stores an event the session buffer, without sending it to the Service</td>
+</tr>
+<tr>
+<td><code>log(Event[])</code></td>
+<td>Stores a group of events to the session buffer, without sending them to the Service</td>
+</tr>
+<tr>
+<td><code>update()</code></td>
+<td>Posts the contents of the session buffer to the Service</td>
+</tr>
+<tr>
+<td><code>update(Event)</code></td>
+<td>Posts an event to the Service, after first transmitting any events already stored in the session buffer</td>
+</tr>
+<tr>
+<td><code>update(Event[])</code></td>
+<td>Posts a group of events to the Service, after first transmitting any events already stored in the session buffer</td>
+</tr>
+<tr>
+<td><code>send(Event)</code></td>
+<td>Posts an event to the Service, without transmitting any events already stored in the session buffer</td>
+</tr>
+<tr>
+<td><code>send(Event[])</code></td>
+<td>Posts a group of events to the Service, without transmitting any events already stored in the session buffer</td>
+</tr>
+<tr>
+<td><code>stop()</code></td>
+<td>Informs the Service that a session has locally been terminated</td>
+</tr>
+</tbody></table>
+
+<p>After internal initialization is completed, a connection (login) to the Pivotal AX Service is attempted by the CetasAgent constructor and an exception is thrown if the login attempt is not successful. Client applications should take care of full initialization of CetasAgent objects prior to being able to communicate with the Pivotal AX Service.</p>
+
+<p>The <code>log()</code> calls operate in an asynchronous (non-blocking) mode with respect to the server, unless they result in filling up the event buffer, in which case a blocking update() call is automatically made, emptying the buffer so that subsequent new events can be stored in it.</p>
+
+<p>The <code>update()</code> call represents an optional means for synchronously flushing the event (session) buffer and transmitting its contents to the Pivotal AX Service without having to wait for the preset time interval to expire. It also allows queueing more events for transmission after the buffer contents are transmitted, a behavior that can be overriden by the send() call, which directly sends the supplied event(s), without affecting the contents of the event buffer.</p>
+
+<h1><a id='example'></a>Usage Example</h1>
+
+<p>A Java client application can communicate with the Pivotal AX Service via successive REST calls, embedding the SDK code as per the following example:</p>
+
+<pre><code class="theme: Confluence; brush: java; gutter: false style=&quot;font-size:12px;&quot;">// Example URL to the Pivotal AX Service 
+
+final String URL = &quot;http://insights.cetas.net:8080/rest/agent/&quot;; 
+
+// Unique application key obtained via the Pivotal AX Web UI 
+
+final String APPLICATION_KEY = &quot;&lt;actual key value&gt;&quot;; 
+
+// Create a configuration object for a session with a capacity of 100 events 
+
+// and an update interval of 30 minutes (1800 seconds) 
+
+Config config = new Config().setCapacity(100).setUpdateInterval(1800); 
+
+CetasAgent agent = null; 
+
+try
+{
+   agent = new CetasAgent(URL, APPLICATION_KEY, config);
+}
+catch (Exception e) // Thrown if no connection to the service was possible
+{
+// Handle error condition and retry until connected
+} 
+
+Event event = new Event(); 
+
+// Game application evolving, with the player reaching the end of a level 
+
+// and recording the following custom statistics (shown literally for clarity). 
+
+event.set(&quot;level&quot;,&quot;1&quot;).set(&quot;time&quot;,&quot;43.5&quot;).set(&quot;score&quot;,&quot;17592&quot;).set(&quot;bonus&quot;,&quot;1200&quot;); 
+
+agent.log(event); // Asynchronously store the event in the session buffer 
+
+... // More gameplay with numerous other events added 
+
+// Synchronously transmit all the events buffered so far to the 
+
+// Pivotal AX Application Service. Note that, if the time elapsed is 
+
+// larger than the session update interval, or if the buffer 
+
+// capacity has been exceeded in a previous call to the log() 
+
+// method, at least one agent.update() operation has already 
+
+// taken place. 
+
+agent.update(); 
+
+... // More gameplay with numerous other events added and updated 
+
+// Game ends, logout 
+
+agent.stop();
+</code></pre>
+
+
+        </div><!-- end of body-container content-->
+      </div><!-- end of container -->
+    </div><!--end of container-fluid-->
+  </div><!--end of main-wrap-->
+
+  <div class="site-footer desktop-only">
+      <div class="container-fluid">
+          <div class="site-footer-links">
+              <span class="version"><a href='/'>Pivotal Documentation</a></span>
+              <span>&copy;
+                  <script>
+                      var d = new Date();
+                      document.write(d.getFullYear());
+                  </script>
+                  <a href='http://gopivotal.com'>Pivotal Software</a> Inc. All Rights Reserved.
+              </span>
+          </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+      (function() {
+          var didInit = false;
+          function initMunchkin() {
+              if(didInit === false) {
+                  didInit = true;
+                  Munchkin.init('625-IUJ-009');
+              }
+          }
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+          s.onreadystatechange = function() {
+              if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                  initMunchkin();
+              }
+          };
+          s.onload = initMunchkin;
+          document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+  </script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39702075-1']);
+    _gaq.push(['_setDomainName', 'gopivotal.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

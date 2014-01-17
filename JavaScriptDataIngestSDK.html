@@ -1,0 +1,481 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>JavaScript Data Ingest SDK | Pivotal CF Docs</title>
+
+  <link href="../stylesheets/master.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/breadcrumbs.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/search.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/portal-style.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/printable.css" media="print" rel="stylesheet" type="text/css" />
+
+  <script src="../javascripts/all.js" type="text/javascript"></script>
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+</head>
+
+<body class="pivotalax pivotalax_JavaScriptDataIngestSDK">
+<div class='wrap'>
+  <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      try {
+          Typekit.load();
+      } catch (e) {
+      }
+  </script>
+  <script type="text/javascript">
+      document.domain = "gopivotal.com";
+  </script>
+  <header class="navbar desktop-only" id="nav">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <div class="pivotal-logo--container">
+                <a class="pivotal-logo" href="http://gopivotal.com"><span></span></a>
+            </div>
+
+            <ul class="nav pull-right">
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/paas" id="paas-nav-link">PaaS</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/big-data" id="big-data-nav-link">BIG DATA</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/agile" id="agile-nav-link">AGILE</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/oss" id="oss-nav-link">OSS</a>
+                </li>
+                <li class="nav-search">
+                    <a href="http://www.gopivotal.com/search-pivotal"><span></span></a>
+                </li>
+            </ul>
+        </div>
+        <a href="http://www.gopivotal.com/contact">
+            <img id="get-started" src="http://www.gopivotal.com/sites/all/themes/gopo13/images/get-started.png">
+        </a>
+    </div>
+  </header>
+  <div class="main-wrap">
+    <div class="container-fluid">
+      <div class="container">
+        <div id="sub-nav" class="nav-container desktop-only">
+          <ul class="menu">
+            <li class="first expanded js-maintopic"><a id='home-nav-link' href="/pivotalax/index.html">Home</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/PivotalAXVersion1_0.html">Overview of Pivotal Analytics</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/InstallationGuide.html">Installation Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/AdministrationGuide.html">Administration Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataSourceManagementGuide.html">Data Source Management Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataVisualizationGuide.html">Data Visualization Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataIngestionAPIs.HTML">Data Ingestion APIs</a></li>
+          </ul>
+        </div><!--end of sub-nav-->
+        <div class="body-container content">
+
+          <!-- Google CSE Search Box -->
+          <script>
+              (function() {
+                  var cx = '005804290371689664731:n1ix15a_ysy';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                          '//www.google.com/cse/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+              })();
+          </script>
+          <gcse:search></gcse:search>
+
+          <ul class="breadcrumbs"><li><a href="./">Pivotal AX Version 1.0 Documentation</a></li> <li class="active"><span>JavaScript Data Ingest SDK</span></li></ul>
+
+          <h3 class="title-container">JavaScript Data Ingest SDK</h3>
+
+          
+
+
+          <ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#application-key">Getting the Application Key</a></li>
+<li><a href="#tracking-code">Adding the Pivotal AX tracking code</a></li>
+<li><a href="#apis">APIs</a>
+
+<ul>
+<li><a href="#setting-application-key">Setting the Application Key</a></li>
+<li><a href="#page-visit-event-tracking">Page visit event tracking</a></li>
+<li><a href="#page-click-event-tracking">Page click event tracking</a></li>
+<li><a href="#eCommerce-event-tracking">eCommerce event tracking</a>
+
+<ul>
+<li><a href="#transaction-record">Transaction record</a></li>
+<li><a href="#items-record">Items record</a></li>
+<li><a href="#transaction-commit">Transaction commit</a></li>
+</ul></li>
+<li><a href="#user-action-event-tracking">User action event tracking</a></li>
+<li><a href="#custom-event-tracking">Custom event tracking</a></li>
+<li><a href="#gaming-tracking">Gaming tracking</a>
+
+<ul>
+<li><a href="#common-event-tracking">Common event tracking</a></li>
+<li><a href="#purchase-event-tracking">Purchase event tracking</a>
+
+<ul>
+<li><a href="#add-transaction">Add transaction</a></li>
+<li><a href="#add-transaction-item">Add transaction item</a></li>
+<li><a href="#commit-transaction">Commit the transaction</a></li>
+</ul></li>
+<li><a href="#invitation-event-tracking">Invation event tracking</a></li>
+</ul></li>
+<li><a href="#set-visitor-type">Setting the Visitor Type (Paid user or not)</a></li>
+</ul></li>
+</ul>
+
+<h1><a id='overview'></a>Overview</h1>
+
+<p>This page discusses how to use the PIvotal AX JavaScript SDK for instrumenting web applications with the objective to track customer web data, such as the number of visitors, sessions, transactions and page click statistics. Developers or site administrators need to install the minimal code snippets described below on the various pages of their web sites and choose the appropriate APIs from the list of options below.</p>
+
+<h1><a id='application-key'></a>Getting the Application Key</h1>
+
+<p>When developers create an application in Pivotal AX, the application key will be shown after the application is created/registered successfully. The application key is required to be sent with every request so that Pivotal AX can decipher the data and assign it to the proper application. The Pivotal AX Web interface provides ready-made JavaScript code snippets that include the application key of the corresponding application. </p>
+
+<h1><a id='tracking-code'></a>Adding the Pivotal AX tracking code</h1>
+
+<p>Use the Pivotal AX application to define an application feed. The application provides code snippets you can copy and paste into your application code. See <a href="DataSourceManagementGuide.html#application-feed">Data Source Management Guide: Application Feeds</a>.</p>
+
+<p>Site Owners/Administrators (or Developers) need to copy/paste the sample code snippet below into their web pages. This serves as the minimal code that needs to be added to perform any type of tracking.</p>
+
+<p>An example is provided below. </p>
+
+<p>Please remember to replace the application key in the code below with the one you got from the first step (Note that the Pivotal AX Web interface provides ready-made JavaScript code snippets that include the application key of the corresponding application.)</p>
+
+<pre><code class="theme: Confluence; brush: javascript; gutter: true style=&quot;font-size:12px;&quot;"><!-- Start Pivotal AX Web Analytics Tracker -->
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var pa_baseUrl = &#39;https://webfeeds.cetas.net&#39;;
+    var _caq = _caq || [];
+    _caq.push([&#39;setAppKey&#39;,&#39;PUT_HERE_THE_APPLICATION_KEY_FROM_THE_APPLICATION_FEED_REGISTRATION_IN_Pivotal_AX_Web_UI&#39;]);
+    _caq.push([&#39;trackPageView&#39;]);
+    (function() {
+    var cetas = document.createElement(&#39;script&#39;); cetas.type = &#39;text/javascript&#39;; cetas.async = true;
+    cetas.src = cetas_baseUrl + &#39;/js/api/cetas-tracker.js&#39;;
+    var cetas_s = document.getElementsByTagName(&#39;script&#39;)[0];
+    cetas_s.parentNode.insertBefore(cetas, cetas_s);
+    }());
+&lt;/script&gt;
+<!-- Finish Pivotal AX Web Analytics Tracker -->
+</code></pre>
+
+<p>When the page is loaded on the browser, the code above loads cetas-tracker.js from the Pivotal AX site and then invokes two APIs: the &lsquo;setAppKey&rsquo; API and the &lsquo;trackPageView&rsquo; API that sends the actual page view information to Pivotal AX (check details in sections below).</p>
+
+<h1><a id='apis'></a>APIs</h1>
+
+<h2><a id='setting-application-key'></a>Setting the Application key</h2>
+
+<p>This method sets the application key so that the tracking code sends the tracking data to the correct Pivotal AX project and application combination.</p>
+
+<p>Parameters: appKey(required)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;setAppKey&#39;` `,` `&#39;your application key here!&#39;` `]);`
+</code></pre>
+
+<h2><a id='page-visit-event-tracking'></a>Page visit event tracking</h2>
+
+<p>This method tracks the page URL, title and visitor&rsquo;s screen, browser, and OS information.</p>
+
+<p>Parameters: url (optional)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;trackPageView&#39;` `]);   ` `// this method gets the visited URL automatically`
+
+`_caq.push([` `&#39;trackPageView&#39;` `, ` `&#39;/securityzone.html&#39;` `]);    ` `// this method overrides the URL`
+</code></pre>
+
+<h2><a id='page-click-event-tracking'></a>Page click event tracking</h2>
+
+<p>This method tracks the mouse click events, including the coordinates of the mouse click position.</p>
+
+<p>Parameters: N/A</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;trackClicks&#39;` `]);`
+</code></pre>
+
+<h2><a id='eCommerce-event-tracking'></a>eCommerce event tracking</h2>
+
+<p>There are three APIs here to support eCommerce event tracking as described below. The site administrator (or the developer) needs to explicitly use these APIs and assign the corresponding values from the page variables to be able to perform eCommerce-type of analytics.</p>
+
+<h3><a id='transaction-record'></a>Transaction Record</h3>
+
+<p>This method tracks the information of an overall transaction on an eCommerce site (e.g. a customer buying a set of items in a cart). </p>
+
+<p>Parameters: </p>
+
+<ul>
+<li>  order_id(required)</li>
+<li>  store_name(optional)</li>
+<li>  total_amount(required)</li>
+<li>  tax(optional)</li>
+<li>  shipping(optional)</li>
+<li>  payment_gateway(optional)</li>
+<li>  city(optional)</li>
+<li>  state(optional)</li>
+<li><p>country(optional)</p>
+
+<p>Sample:</p></li>
+</ul>
+
+<pre><code>    `_caq.push([` `&#39;addTrans&#39;` `,`
+    `&#39;order123&#39;` `, ` `// the id of the order`
+    `&#39;test-app&#39;` `,  ` `// the source or store name that originated the transaction`
+    `&#39;100.50&#39;` `, ` `// the total amount of revenue - required`
+    `&#39;1.25&#39;` `, ` `// amount of tax`
+    `&#39;3.50&#39;` `,  ` `// amount of shipping`
+    `&#39;paypal&#39;` `, ` `// transaction gateway name`
+    `&#39;Palo Alto&#39;` `, ` `// city`
+    `&#39;CA&#39;` `, ` `//state`
+    `&#39;United States&#39;` `//country`
+    `]);`
+
+</code></pre>
+
+<h3><a id='items-record'></a>Items Record</h3>
+
+<p>This method tracks the individual items of a transaction.</p>
+
+<p>Parameters: </p>
+
+<ul>
+<li>  order_id(required)</li>
+<li>  sku_NO.(required)</li>
+<li>  product_name(required)</li>
+<li>  category(optional)</li>
+<li>  unit price(optional)</li>
+<li><p>quantity(optional)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;addItem&#39;` `, ` `&#39;order123&#39;` `, ` `&#39;SKU123&#39;` `, ` `&#39;iPad&#39;` `, ` `&#39;top100&#39;` `, 499.00, 1]);`
+`_caq.push([` `&#39;addItem&#39;` `, ` `&#39;order223&#39;` `, ` `&#39;SKU456&#39;` `, ` `&#39;iPhone4s&#39;` `, ` `&#39;top100&#39;` `, 299.00, 2]);`
+</code></pre></li>
+</ul>
+
+<h3><a id='transaction-commit'></a>Transaction Commit</h3>
+
+<p>This method sends the transaction and all the item data to Pivotal AX.
+   Parameters:  N/A</p>
+
+<p>Sample:</p>
+
+<pre><code>    `_caq.push([` `&#39;trackTrans&#39;` `]);`
+</code></pre>
+
+<h2><a id='user-action-event-tracking'></a>User action event tracking</h2>
+
+<p>This method tracks user actions when visiting the corresponding Web page. It can be used for generation of funnel stages in an eCommerce site or to track any other user action that needs to be communicated to the analytics engine.                             </p>
+
+<p>Parameters:</p>
+
+<ul>
+<li>  action_category(required)</li>
+<li>  action_name(required)</li>
+<li>  action_label(required)</li>
+<li><p>number_value(optional)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;trackAction&#39;` `,` `&#39;comment&#39;` `,` `&#39;publish&#39;` `, ` `&#39;number&#39;` `, 10]);`
+</code></pre></li>
+</ul>
+
+<h2><a id='custom-event-tracking'></a>Custom event tracking</h2>
+
+<p>This method tracks Custom events. It is the responsibility of the site owner (or the developer) to choose the appropriate event categories.                                                         </p>
+
+<p>Parameters:</p>
+
+<ul>
+<li>  event_category(required)</li>
+<li>  event_key(required, repeatable with &lsquo;event_value&rsquo;)</li>
+<li><p>event_value(required, repeatable with &lsquo;event_value&rsquo;)</p>
+
+<p>Sample:</p></li>
+</ul>
+
+<pre><code>  `_caq.push([` `&#39;trackEvent&#39;` `,` `&#39;closePage&#39;` `,` `&#39;key1&#39;` `,` `&#39;value1&#39;` `,` `&#39;key2&#39;` `,` `&#39;value2&#39;` `, ` `&#39;key3&#39;` `, ` `&#39;value3&#39;` `, ......]);`
+</code></pre>
+
+<h2><a id='gaming-tracking'></a>Gaming Tracking</h2>
+
+<p>To support the gaming industry vertical, we offer a set of gaming-specific APIs/methods as described below.</p>
+
+<h3><a id='common-event-tracking'></a>Common Event Tracking</h3>
+
+<p>This method tracks gaming events such as &lsquo;start game&rsquo;, &lsquo;stop game&rsquo; and &lsquo;level upgrade&rsquo;.</p>
+
+<p>Parameters:</p>
+
+<ul>
+<li>  action_name (required)</li>
+<li>  game_id (required)</li>
+<li>  game_name (required)</li>
+<li>  game_version (optional)</li>
+<li><p>game_level(optional)</p>
+
+<p>Sample (sends a start game event for a game called &ldquo;My Game Title&rdquo; with version 1.1 for level 2):</p>
+
+<pre><code>`_caq.push([` `&#39;trackGame&#39;` `,` `&#39;START&#39;` `,` `&#39;001_002&#39;` `,` `&#39;My Game Title&#39;` `,` `&#39;1.1&#39;` `,` `&#39;2&#39;` `]);`
+</code></pre></li>
+</ul>
+
+<h3><a id='purchase-event-tracking'></a> Purchase Event Tracking</h3>
+
+<p>This method facilitates tracking of virtual good purchases. It tracks the player&rsquo;s purchase event when they are playing the game and it follows a similar structure with the corresponding eCommerce API consisting of three sections described below.</p>
+
+<h4><a id='add-transaction'></a>Add Transaction</h4>
+
+<p>Parameters:</p>
+
+<ul>
+<li>  game_id (required)</li>
+<li>  transaction_id (required)</li>
+<li>  total_amount (required)</li>
+<li>  game_version (optional)</li>
+<li><p>game_level(optional)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;addGameTrans&#39;` `,` `&#39;001_002&#39;` `,` `&#39;order_001&#39;` `,` `&#39;29.99&#39;` `,` `&#39;1.1&#39;` `, ` `&#39;2&#39;` `]);`
+</code></pre></li>
+</ul>
+
+<h4><a id='add-transaction-item'></a>Add Transaction Item</h4>
+
+<p>Parameters:</p>
+
+<ul>
+<li>  game_id (required)</li>
+<li>  transaction_id (required)</li>
+<li>  item_name (required)</li>
+<li>  item_price (optional)</li>
+<li><p>item_quantity(optional)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;addGameItem&#39;` `,` `&#39;001_002&#39;` `,` `&#39;order_001&#39;` `,` `&#39;magic ball&#39;` `,` `&#39;9.99&#39;` `, ` `&#39;2&#39;` `]);`
+</code></pre></li>
+</ul>
+
+<h4><a id='commit-transaction'></a>Commit the Transaction</h4>
+
+<p>Parameters: N/A</p>
+
+<p>Sample:</p>
+
+<pre><code>  `_caq.push([` `&#39;trackGameTrans&#39;` `]);`
+</code></pre>
+
+<h3><a id='invitation-event-tracking'></a> Invitation Event Tracking</h3>
+
+<p>This method track player&rsquo;s invitations to friends from inside the game. It is used to perform engagement analysis.</p>
+
+<p>Parameters:</p>
+
+<ul>
+<li>  game_id (required)</li>
+<li>  send_to (required, friends list which separated by comma)</li>
+<li>  channel (optional)</li>
+<li>  game_version(optional)</li>
+<li><p>game_level(optional)</p>
+
+<p>Sample:</p>
+
+<pre><code>    `_caq.push([` `&#39;trackGameInvitation&#39;` `,` `&#39;001_002&#39;` `,` ` &#39;Bob@game.net, Alice@abc.com&#39;` `,` `&#39;Facebook&#39;` `,` `&#39;1.2&#39;` `, ` `&#39;3&#39;` `]);`
+    ````
+</code></pre></li>
+</ul>
+
+<h2><a id='set-visitor-type'></a>Set Visitor Type (Paid User or Not)</h2>
+
+<p>This method allows setting the current visitor&rsquo;s type, to a paid user or just a guest. When this API method is not invoked, the paid flag will be set to &ldquo;unknown&rdquo;.
+    The visitor type is stored on the browser, and once this API is invoked, each subsequent request will contain the new value unless the site owner (or the developer) invokes it again. You can find more information on this <a href="https://cetasbigdata.atlassian.net/wiki/pages/viewpage.action?pageId=4063257">here</a>.</p>
+
+<p>Parameters:</p>
+
+<ul>
+<li><p>is_paid_user (required, boolean only)</p>
+
+<p>Sample:</p>
+
+<pre><code>`_caq.push([` `&#39;setVisitorIsPaid&#39;` `,` `true` `]);`
+</code></pre></li>
+</ul>
+
+
+        </div><!-- end of body-container content-->
+      </div><!-- end of container -->
+    </div><!--end of container-fluid-->
+  </div><!--end of main-wrap-->
+
+  <div class="site-footer desktop-only">
+      <div class="container-fluid">
+          <div class="site-footer-links">
+              <span class="version"><a href='/'>Pivotal Documentation</a></span>
+              <span>&copy;
+                  <script>
+                      var d = new Date();
+                      document.write(d.getFullYear());
+                  </script>
+                  <a href='http://gopivotal.com'>Pivotal Software</a> Inc. All Rights Reserved.
+              </span>
+          </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+      (function() {
+          var didInit = false;
+          function initMunchkin() {
+              if(didInit === false) {
+                  didInit = true;
+                  Munchkin.init('625-IUJ-009');
+              }
+          }
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+          s.onreadystatechange = function() {
+              if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                  initMunchkin();
+              }
+          };
+          s.onload = initMunchkin;
+          document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+  </script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39702075-1']);
+    _gaq.push(['_setDomainName', 'gopivotal.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

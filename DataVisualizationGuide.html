@@ -1,0 +1,812 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>Data Visualization Guide | Pivotal CF Docs</title>
+
+  <link href="../stylesheets/master.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/breadcrumbs.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/search.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/portal-style.css" media="screen,print" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/printable.css" media="print" rel="stylesheet" type="text/css" />
+
+  <script src="../javascripts/all.js" type="text/javascript"></script>
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+</head>
+
+<body class="pivotalax pivotalax_DataVisualizationGuide">
+<div class='wrap'>
+  <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      try {
+          Typekit.load();
+      } catch (e) {
+      }
+  </script>
+  <script type="text/javascript">
+      document.domain = "gopivotal.com";
+  </script>
+  <header class="navbar desktop-only" id="nav">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <div class="pivotal-logo--container">
+                <a class="pivotal-logo" href="http://gopivotal.com"><span></span></a>
+            </div>
+
+            <ul class="nav pull-right">
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/paas" id="paas-nav-link">PaaS</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/big-data" id="big-data-nav-link">BIG DATA</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/agile" id="agile-nav-link">AGILE</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="http://www.gopivotal.com/oss" id="oss-nav-link">OSS</a>
+                </li>
+                <li class="nav-search">
+                    <a href="http://www.gopivotal.com/search-pivotal"><span></span></a>
+                </li>
+            </ul>
+        </div>
+        <a href="http://www.gopivotal.com/contact">
+            <img id="get-started" src="http://www.gopivotal.com/sites/all/themes/gopo13/images/get-started.png">
+        </a>
+    </div>
+  </header>
+  <div class="main-wrap">
+    <div class="container-fluid">
+      <div class="container">
+        <div id="sub-nav" class="nav-container desktop-only">
+          <ul class="menu">
+            <li class="first expanded js-maintopic"><a id='home-nav-link' href="/pivotalax/index.html">Home</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/PivotalAXVersion1_0.html">Overview of Pivotal Analytics</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/InstallationGuide.html">Installation Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/SystemRequirementsandSizingGuidelines.html">System Requirements and Sizing</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/AdministrationGuide.html">Administration Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataSourceManagementGuide.html">Data Source Management Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataVisualizationGuide.html">Data Visualization Guide</a></li>
+        		<li class="first expanded js-maintopic"><a href="/pivotalax/DataIngestionAPIs.HTML">Data Ingestion APIs</a></li>
+          </ul>
+        </div><!--end of sub-nav-->
+        <div class="body-container content">
+
+          <!-- Google CSE Search Box -->
+          <script>
+              (function() {
+                  var cx = '005804290371689664731:n1ix15a_ysy';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                          '//www.google.com/cse/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+              })();
+          </script>
+          <gcse:search></gcse:search>
+
+          <ul class="breadcrumbs"><li><a href="./">Pivotal AX Version 1.0 Documentation</a></li> <li class="active"><span>Data Visualization Guide</span></li></ul>
+
+          <h3 class="title-container">Data Visualization Guide</h3>
+
+          
+
+
+          <ul>
+<li>  <a href="#overview-ui">Overview of the Pivotal AX Interface</a>
+
+<ul>
+<li>  <a href="#logging-in">Logging into Pivotal AX</a></li>
+</ul></li>
+<li>  <a href="#data-visualization">Data Visualization</a>
+
+<ul>
+<li>  <a href="#auto-charts">Auto-Charts</a></li>
+<li>  <a href="#canvas-view">Canvas View</a>
+
+<ul>
+<li>  <a href="#selecting-data-source">Selecting a Data Source</a>
+
+<ul>
+<li>  <a href="#modifying-data-fields">Modifying Data Fields</a></li>
+</ul></li>
+<li>  <a href="#chart-types">About Chart Types</a></li>
+<li>  <a href="#creating-chart-report">Creating a Chart or Report</a></li>
+<li>  <a href="#filtering">Filtering Values in Charts and Reports</a></li>
+<li>  <a href="#sharing">Sharing a Chart or Report</a></li>
+<li>  <a href="#exporting">Exporting or Printing a Chart or Report</a></li>
+<li>  <a href="#time-pivot">About Time Pivot</a></li>
+</ul></li>
+<li>  <a href="#raw-events">Raw Events</a></li>
+<li>  <a href="#data-profile">Data Profile</a></li>
+</ul></li>
+<li>  <a href="#dashboards">Dashboards</a></li>
+<li>  <a href="#data-subsets">Data Subsets</a>
+
+<ul>
+<li>  <a href="#hive-queries">HiveQL Queries</a></li>
+<li>  <a href="#summary-aggregates">Summary Aggregates</a></li>
+<li>  <a href="#unique-aggregates">Unique Aggregates</a></li>
+</ul></li>
+</ul>
+
+<h1><a id='overview-ui'></a>Overview of the Pivotal AX Interface</h1>
+
+<p>After you create your Pivotal AX account and log in, the Pivotal AX application displays in your Web browser. For new users, the application opens in the Data Sources area. The Pivotal AX application contains the following parts:</p>
+
+<ul>
+<li><p><strong>Navigation Menu</strong>
+Click the <strong>Collapse Menu</strong> arrow to collapse the menu to a set of icons without labels. Click the arrow again to expand the menu to include the labels.
+The Navigation Menu contains the following options:</p>
+
+<ul>
+<li><p><strong>All Projects—</strong>Create a new project, select an existing project, or view a summary page of all projects.</p>
+
+<p>See <a href="AdministrationGuide.html#manage-projects">Managing Projects</a>.</p></li>
+<li><p><strong>Visualizations—</strong>View and create visualizations of your data.</p>
+
+<p>See <a href="#data-visualization">Data Visualization Overview</a>. </p>
+
+<p>Available visualizations include: </p>
+
+<ul>
+<li>  Canvas View</li>
+<li>  Auto-Charts</li>
+<li>  Raw Events</li>
+<li>  Data Profile</li>
+</ul></li>
+<li><p><strong>Dashboards—</strong>Consolidate data visualizations for your project on one or more dashboard pages. You can share these pages with other Pivotal AX users.</p>
+
+<p>See <a href="#dashboards">Dashboards</a>.</p></li>
+<li><p><strong>Data Sources—</strong>Define the files and live feeds that contain the data you analyze using Pivotal AX.</p>
+
+<p>See <a href="DataSourceManagementGuide.html">Data Source Management Guide</a>. </p></li>
+<li><p><strong>Data Subsets—</strong>Define Hive queries, joins, summary aggregates, or distinct aggregates to further analyze your data.  </p>
+
+<p>See <a href="#data-subsets">Data Subsets</a>.</p></li>
+<li><p><strong>Manage—</strong>Edit data sampling and sharing settings for your project. Administrators can also view other projects.</p>
+
+<p>See <a href="AdministrationGuide.html">Administration Guide</a>. </p></li>
+</ul></li>
+<li><p><strong>User Menu</strong>
+From this menu you can edit your user profile, change your password, view an account overview, edit global settings, and logout. </p>
+
+<p>See <a href="AdministrationGuide.html#user-management">User Management</a>.</p></li>
+<li><p><strong>Account and project name</strong></p>
+
+<p><img alt="Pivotal AX User Interface" src="images/pax_ui_overview.png" /></p></li>
+</ul>
+
+<h2><a id='logging-in'></a>Logging into Pivotal AX</h2>
+
+<p>After the installation of Pivotal AX is complete you use a Web browser to access the Pivotal AX application.  </p>
+
+<p>From this application, you can:</p>
+
+<ul>
+<li>  Create projects</li>
+<li>  Define data sources for analysis</li>
+<li>  Visualize data</li>
+<li>  Manage your Pivotal AX installation</li>
+</ul>
+
+<p>To log in to Pivotal AX:</p>
+
+<ol>
+<li><p>Enter the URL of your Pivotal AX installation in your Web browser
+The Pivotal AX login screen displays:</p>
+
+<p><img src="images/login.png" /></p></li>
+<li><p>If this is the first time you are logging in to Pivotal AX, click the <strong>New User? Register</strong> link.</p>
+
+<p>The <strong>New User Registration</strong> form displays:</p>
+
+<p><img src="images/new_user_reg.png" /> </p></li>
+<li><p>Fill in the form and click <strong>Submit</strong>.</p>
+
+<p>An email with a confirmation link is sent to the specified email address.</p></li>
+<li><p>Open the email and click the confirmation link.</p>
+
+<p>The Pivotal AX login screen opens in your Web browser. </p></li>
+<li><p>Enter your new Pivotal AX user name and password.</p>
+
+<p>The Pivotal AX application opens in your Web browser. </p></li>
+</ol>
+
+<h1><a id='data-visualization'></a>Data Visualization</h1>
+
+<p>Pivotal AX allows business analysts to visualize the data ingested by Pivotal AX in a variety of ways. You can create and save your own charts and reports and share them with other Pivotal Analytic users, and you can also download these charts and reports in a variety of graphics formats or as a PDF file. You can choose to display the charts in various formats such as line graphs, bar charts, pie charts, or in tabular format. </p>
+
+<p>You can combine one or more visualizations and save them to a <em>Dashboard. </em>When you view a dashboard, all data in the saved visualizations display the current data set. You can share dashboards with other Pivotal AX users. </p>
+
+<h2><a id='auto-charts'></a>Auto-Charts</h2>
+
+<p>The Auto-Charts feature presents a set of possible visualizations of your data that you can use as a starting point to create the visualizations you need to analyze your data. These visualizations are automatically created by Pivotal AX based only on the data in your project and may not always provide a useful analysis of your data set. To create custom visualizations, see <a href="#canvas-view">Canvas View</a>.</p>
+
+<p><strong>To view the Auto-Charts:</strong></p>
+
+<ol>
+<li> Log in to Pivotal AX.</li>
+<li> Select Visualizations &gt; Auto-Chart from the navigation menu on the left. </li>
+</ol>
+
+<p>The <strong>Auto-Charts</strong> screen displays:
+ <img src="images/auto-charts.png" /></p>
+
+<p>You can change the type of visualization in each chart by selecting one of the icons at the top of the chart:</p>
+
+<p><img src="images/auto-chart-change.png" /> </p>
+
+<p>If any of the charts present useful data, you can open a chart in <strong>Canvas View</strong>, save the chart, and add it to a <strong>Dashboard</strong>.</p>
+
+<p><strong>To open an Auto-Chart in Canvas view and save it:</strong></p>
+
+<ol>
+<li> Log in to Pivotal AX</li>
+<li> Select <strong>Visualizations</strong> &gt; <strong>Auto-Charts</strong> from the navigation menu on the left. </li>
+<li><p>Click the expand icon in the upper-right corner of a chart. </p>
+
+<p><img src="images/chart-expand.png" /> </p>
+
+<p>The chart opens in Canvas view. </p></li>
+<li><p>(Optional) Edit the chart type or other parameters to customize the chart. See <a href="#creating-chart-report">Creating a Chart or Report</a>.</p></li>
+<li><p>Click <strong>Save Canvas.</strong> </p></li>
+<li><p>Enter a title for this chart.</p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+</ol>
+
+<h2><a id='canvas-view'></a>Canvas View</h2>
+
+<p>After your data is uploaded and processed, the raw measures and dimensions extracted from your data are available for creating charts and reports. <em>Canvas View</em> is an interactive environment where you create custom charts and reports by dragging and dropping data elements onto the canvas.</p>
+
+<p><img src="images/canvas-view.png" /> </p>
+
+<p>The left portion of Canvas view displays the data sources and files that you have defined in your project along with the data fields extracted from the data during processing by Pivotal AX. </p>
+
+<h3><a id='selecting-data-source'></a>Selecting a Data Source</h3>
+
+<p>You use the <strong>Data Source</strong> selector to select the data source you want to work with to create charts and reports. Click the down arrow in the Data Source selector to open the list of data sources. The list is divided into various sections, depending on the types of data sources. The sections include Raw Sources Names , Raw Source Filenames, HiveQL queries, Summary Aggregates, and Unique Aggregates.  </p>
+
+<p><img src="images/select_data_source.png" /> </p>
+
+<p>When you select a source, the fields that correspond to the data sources you choose display below the selector:</p>
+
+<p><img src="images/data_source-fields.png" /></p>
+
+<p>The fields display in the following groups:</p>
+
+<table><thead>
+<tr>
+<th>Field Groups</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Raw Date Fields</td>
+<td>Displays fields that contain date and time information. The <strong>Event Time</strong> field is created by Pivotal AX and contains the time that the data was processed by Pivotal AX. If the data source is a static file, this field indicates when the data was processed by Pivotal AX, not the date that the event occurred. If the data source is an application feed or Live feed, this field contains the time when the data arrived for processing by Pivotal AX.</td>
+</tr>
+<tr>
+<td>Raw Measures</td>
+<td>Displays fields that contain quantitative numeric information such as prices, transaction amounts, quantities, or counts. Pivotal AX attempts to correctly classify data fields as Measures or as Dimensions, but does not always have sufficient information to correctly classify the data. For example, a part number field may contain only numbers and therefore is assumed to be a measure when it should actually be classified as a dimension. You can re-classify measures as dimensions. See <a href="#modifying-data-fields">Modifying Data Fields</a>. Pivotal AX breaks measures into buckets to improve data analysis. For example, the Qty field is divided into buckets of 10: <p><img src="images/buckets.png" /></p></td>
+</tr>
+<tr>
+<td>Custom Measures</td>
+<td>The <strong>Custom Measures</strong> section allows you to create custom fields by calculating a new value using existing fields and constants. For example, you can add a custom measure that multiplies a price by the quantity sold to create a total sales amount field.</td>
+</tr>
+<tr>
+<td>Raw Dimensions</td>
+<td>Displays fields that contain dimension type of data. Dimensions are usually text fields that describe aspects of the data such as gender, location, type of transaction, etc. See <a href="#modifying-data-fields">Modifying Data Fields</a>.</td>
+</tr>
+</tbody></table>
+
+<p> </p>
+
+<h4><a id='modifying-data-fields'></a>Modifying Data Fields</h4>
+
+<p>You can change the following attributes of the data fields in your project:</p>
+
+<ul>
+<li>  Change the name of a field</li>
+<li>  Re-classify a Raw Measure as a dimension</li>
+<li>  Re-classify a Raw Measure that has been changed to a dimension back to a measure</li>
+<li>  Change the way the field values are bucketed</li>
+</ul>
+
+<p><strong>To modify a data field:</strong></p>
+
+<ol>
+<li><p>Hover over a field name and click the edit icon.</p>
+
+<p><img src="images/edit_button.png" /></p>
+
+<p>The Schema Information Dialog box displays.</p>
+
+<p><img src="images/schema.png" /></p></li>
+<li><p>Do one of the following:</p></li>
+</ol>
+
+<ul>
+<li>  Change the name of the field, type a new name in the <strong>Display name</strong> field.</li>
+<li>  To change a Raw Measure to a dimension, select <strong>Treat as Dimension</strong>.</li>
+<li>  To revert a Raw Measure that has been changed to a dimension, select <strong>Treat as Measure</strong>.</li>
+<li>  To change the buckets displayed, select <strong>Custom</strong> in the Buckets section and enter values to define the buckets. </li>
+</ul>
+
+<ol>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<h3><a id='chart-types'></a>Chart Types</h3>
+
+<p>When you create a chart or report, you can specify an appropriate type of chart for the data you are visualizing. You can quickly change types to preview their output.</p>
+
+<p>The following types of charts are available:</p>
+
+<table><thead>
+<tr>
+<th>Icon</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src="images/column_chart.png" /></td>
+<td>Column Chart</td>
+</tr>
+<tr>
+<td><img src="images/bar_chart.png" /></td>
+<td>Bar Chart</td>
+</tr>
+<tr>
+<td><img src="images/line_chart.png" /></td>
+<td>Line chart</td>
+</tr>
+<tr>
+<td><img src="images/stacked_chart.png" /></td>
+<td>Stacked chart</td>
+</tr>
+<tr>
+<td><img src="images/area_chart.png" /></td>
+<td>Area chart</td>
+</tr>
+<tr>
+<td><img src="images/pie_chart.png" /></td>
+<td>Pie chart</td>
+</tr>
+<tr>
+<td><img src="images/table_report.png" /></td>
+<td>Table</td>
+</tr>
+<tr>
+<td><img src="images/kpi_chart.png" /></td>
+<td>KPI</td>
+</tr>
+</tbody></table>
+
+<h3><a id='creating-chart-report'></a>Creating a Chart or Report</h3>
+
+<p>To create a chart or report:</p>
+
+<ol>
+<li> Navigate to <strong>Canvas View</strong>.</li>
+<li> Select a <strong>Data Source</strong>. See <a href="#selecting-data-source">Selecting a Datasource</a>.</li>
+<li><p>Drag one or more dimensions or measure fields onto the canvas. Not all combinations are available to produce valid reports or charts. </p>
+
+<p>The chart displays.</p></li>
+<li><p>Select a Chart Type. </p>
+
+<p>See <a href="#chart-types">Chart Types</a>.</p></li>
+<li><p>(Optional) Click the Swap Dimensions button to swap the axes of the chart. </p>
+
+<p> <img src="images/swap_axes.png" /></p></li>
+<li><p>(Optional) Select the data you want to display. </p>
+
+<p>See <a href="#filtering">Filtering Values in Charts and Reports</a> and <a href="#time-pivot">About Time Pivot</a>.</p></li>
+<li><p>Click <strong>Save Canvas</strong> to save the chart. </p>
+
+<p>You can also share the chart. See  <a href="#sharing">Sharing a Chart or Report</a>.</p></li>
+</ol>
+
+<h3><a id='filtering'></a>Filtering Values in Charts and Reports</h3>
+
+<p>You can interactively select the data values you want to visualize.</p>
+
+<ol>
+<li><p>In <strong>Canvas</strong> view, click on a field name in the <strong>Data Source</strong> list.</p>
+
+<p>The list expands to display a list of values. </p></li>
+<li><p>Select the data values you want to see.</p></li>
+<li><p>Click the <strong>Include</strong> or <strong>Exclude</strong> button. (You may need to scroll do the bottom of the list of values to see these buttons.)</p>
+
+<p>The chart changes to include or exclude the data you specified.  
+You can also select and deselect data values in the chart&rsquo;s legend.  </p></li>
+</ol>
+
+<h3><a id='sharing'></a>Sharing a Chart or Report</h3>
+
+<p>You can share a chart or report by sending a URL or by embedding Javascript code in a Web page that displays the chart or report. Users who access a shared report or chart do not need to have a Pivotal AX account but they must have network connectivity to the Pivotal AX application. </p>
+
+<p><strong>To share a chart or report:</strong></p>
+
+<ol>
+<li><p>Open a chart or report in <strong>Canvas View</strong>, or - </p>
+
+<ol>
+<li> Select <strong>Dashboards</strong> from the navigation menu on the left</li>
+<li> Select the dashboard that contains the chart you want to share.</li>
+<li> Click the Configure (gear) icon in the cell containing the chart you want to share.</li>
+<li><p>Select <strong>Edit Chart</strong> .</p>
+
+<p>The selected chart opens in <strong>Canvas View</strong>. </p></li>
+</ol></li>
+<li><p>Click the <strong>Share</strong> button.</p>
+
+<p>The Sharing Settings dialog box opens. </p></li>
+<li><p>Enter a name for your shared chart in the <strong>Title</strong> field.</p></li>
+<li><p>Click <strong>Next</strong>.</p>
+
+<p>A dialog box opens that displays the following:</p>
+
+<ul>
+<li>  Javascript code you can copy and paste into an HTML page to embed the chart in a Web page. </li>
+<li>  A URL you can share with others who want to view this chart.</li>
+</ul></li>
+</ol>
+
+<p><strong>Note:</strong> You can also print a chart or export a chart as an image or PDF file. See <a href="#exporting">Exporting or Printing a Chart or Report</a>.</p>
+
+<h3><a id='exporting'></a>Exporting or Printing a Chart or Report</h3>
+
+<p>You can export a chart or report as an image or PDF file and you can also print them.</p>
+
+<p><strong>To export a chart or report:</strong></p>
+
+<ol>
+<li><p>From Canvas view, Auto Charts, or from a cell in a dashboard, click the Export button:</p>
+
+<p><img src="images/export_button.png" /></p>
+
+<p>A menu displays.</p></li>
+<li><p>From this menu select one of the following options:</p></li>
+</ol>
+
+<ul>
+<li>  Print Chart
+(The print dialog box of your browser displays where you can select your printing options.)</li>
+<li>  Download PNG image</li>
+<li>  Download JPEG image</li>
+<li>  Download PDF document</li>
+<li>  Download SVG vector image</li>
+</ul>
+
+<p>When you select one of the <strong>Download</strong> options, the file downloads through your Web browser. </p>
+
+<h3><a id='time-pivot'></a>About Time Pivot</h3>
+
+<p>The Time Pivot function allows you to limit the data displayed in your visualizations to a specific time range. Time Pivot is available for the following types of visualizations:</p>
+
+<ul>
+<li>  Canvas View</li>
+<li>  Auto-Charts</li>
+<li>  Raw Events</li>
+</ul>
+
+<p><strong>To use the Time Pivot function:</strong></p>
+
+<ol>
+<li><p>Click the <strong>Time Pivot</strong> button above the visualization.</p>
+
+<p>The Time Pivot selector displays.</p></li>
+<li><p>Select a date field from the <strong>Raw Date Fields</strong> section beneath <strong>Raw Sources</strong> and drag it into the Time Pivot area. </p></li>
+<li><p>Select an overall time range from the <strong>Last:</strong> selector. You can select 1d, 1w, 1m, 3m, 1y, or ALL.</p>
+
+<p><img src="images/time_pivot_selector.png" /></p>
+
+<p>Time Pivot displays your data as buckets of events. A bar chart indicates the number of events for each time bucket.   </p></li>
+<li><p>Use the sliders to select a date range, or enter a date range using the <strong>Start Date</strong> and <strong>End Date</strong> fields. You can also click on a bar in the time pivot bar chart to select only the time value of the bar.</p>
+
+<p><img src="images/time_pivot_bar_chart.png" /></p></li>
+<li><p>Click <strong>Apply</strong>.</p></li>
+<li><p>Click the <strong>Time Pivot</strong> button again to close the Time Pivot selector. </p>
+
+<p>The time range you have selected remains in effect.  </p></li>
+</ol>
+
+<h2><a id='raw-events'></a>Raw Events</h2>
+
+<p>The <strong>Raw Events</strong> view allows you to view a list of the raw data that has been loaded into your project. In this view you can search and filter the list to drill down into a specific record or set of records. </p>
+
+<p><strong>To view Raw Events:</strong></p>
+
+<ol>
+<li> Log in to Pivotal AX.</li>
+<li> Select <strong>Visualizations</strong> &gt; <strong>Raw Events</strong> from the navigation menu on the left.</li>
+<li><p>In the <strong>Raw Source Names</strong> drop-down list, select the data file containing the raw events you want to view. </p>
+
+<p><img src="images/raw_events.png" /> </p>
+
+<p>A listing of raw data events displays. </p></li>
+<li><p>You can filter the list of events using the following techniques:</p>
+
+<ul>
+<li>  Select a <strong>Raw Measure</strong> or <strong>Dimension</strong> from the <strong>Data Source</strong> column.</li>
+<li>  Click on field value in an event listing. Only events where the field matches this value display. </li>
+<li>  Enter a search term in the search bar. </li>
+<li>  Click <strong>Time Pivot</strong> and select a time range.</li>
+</ul>
+
+<p>Note that the filter values display above the list of raw events. Click the <strong>x</strong> in each displayed filter to remove the filter.</p>
+
+<p><img src="images/raw_events_filter.png" /> </p></li>
+</ol>
+
+<h1><a id='data-profile'></a>Data Profile</h1>
+
+<p>The Data Profile view displays pre-configured reports with statistical information about measures and dimensions from the raw data sources in your project. The charts presented on this page are not editable and you can not add additional charts. </p>
+
+<p>To open this view, Select <strong>Visualizations</strong> &gt; <strong>Data Profile </strong>from the navigation menu on the left.</p>
+
+<h1><a id='dashboards'></a>Dashboards</h1>
+
+<p>Dashboards allow you to consolidate one or more reports and charts from your project on to one or more dashboard pages. A dashboard page consists of one or more <em>cells. </em>Each cell contains a report or chart. As you create a dashboard, you can modify the size and location of the cells. You can clone existing dashboards to create a new dashboard based on the original. </p>
+
+<p>Before creating dashboards, create at least one chart. See <a href="#canvas-view">Canvas View</a>.</p>
+
+<p><strong>To create a dashboard:</strong></p>
+
+<ol>
+<li><p>Select <strong>Dashboards</strong> from the left navigation menu.   </p>
+
+<p>The <strong>Dashboards</strong> screen displays.
+Note the Chart/Report list in the lower-left portion of the Dashboards page.</p>
+
+<p><img src="images/dashboards.png" /></p></li>
+<li><p>Click the <strong>+</strong> icon, located at the bottom of the list of dashboards to create a new dashboard.</p></li>
+<li><p>Type a name for your dashboard in its name field.  </p></li>
+<li><p>Select an item from the Chart/Report list and drag it into one of the cells in the blank dashboard.</p>
+
+<p>The chart displays in the cell.</p></li>
+<li><p>Add additional charts as required.</p></li>
+<li><p>Click the Configure (Gear) icon to open the Dashboard Menu where you can modify the layout of the dashboard. From this menu you can:</p>
+
+<ul>
+<li>  Save the dashboard</li>
+<li>  Flip the dashboard cells horizontally or vertically</li>
+<li>  Rotate the dashboard cells</li>
+<li>  Refresh the chart contents on the dashboard. </li>
+</ul></li>
+<li><p>Click the Configure (gear) icon in a report cell to open the Report Menu. From this menu you can:</p>
+
+<ul>
+<li>  Edit the chart (the view switches to Canvas View)</li>
+<li>  Show or hide the legend</li>
+<li>  Refresh the content</li>
+<li>  Change the type of chart (Chose from Column, Bar, Areaspline, AreaStacked, Spline, Pie, or Table.)</li>
+<li>  Edit the title of the cell</li>
+<li>  Add cells to the dashboard</li>
+<li>  Remove content from a cell</li>
+<li>  Hide the footer</li>
+<li>  Delete the cell</li>
+</ul></li>
+<li><p>Adjust the size and shape of the cells by clicking and dragging the separator lines between the cells. </p>
+
+<p><img src="images/adjust_shape.png" /> </p></li>
+<li><p>Click <strong>Save Dashboard</strong>.</p></li>
+</ol>
+
+<p><strong>To Delete a dashboard:</strong></p>
+
+<ol>
+<li> Select <strong>Dashboards</strong> from the left navigation menu.</li>
+<li> From the list of dashboards, select the dashboard you want to delete.</li>
+<li> Click the trash icon below the list of dashboards. </li>
+</ol>
+
+<p><strong>To Clone a dashboard:</strong></p>
+
+<ol>
+<li> Select <strong>Dashboards</strong> from the left navigation menu.</li>
+<li> From the list of dashboards, select the dashboard you want to clone.</li>
+<li> Click the clone icon below the list of dashboards. </li>
+<li> Click the <strong>Save Dashboard</strong> button.</li>
+</ol>
+
+<h1><a id='data-subsets'></a>Data Subsets</h1>
+
+<p>Data subsets allow you to perform more complex data analysis on large data sets by creating Hive queries, Summary Aggregates, and Unique Aggregates. After you create these data subsets you can use them in charts and reports.</p>
+
+<ul>
+<li>  <strong><a href="#hive-queries">HiveQL Queries</a></strong> use the Hive query language and allow you to join multiple data bases and and create custom queries.</li>
+<li>  <strong><a href="#summary-aggregates">Summary Aggregates</a></strong> allow you to summarize large data sets. Using summary aggregates can improve performance.</li>
+<li>  <strong><a href="#unique-aggregates">Unique Aggregates</a></strong> allow you to create visualizations that report all of the unique values in a data set. </li>
+</ul>
+
+<p><strong>Note:</strong> Data subsets only operate on incoming data. To analyze data from static files using data subsets, you must re-process that data before you can using the data subset fields in your charts and reports. Live data from feeds or applications is processed based on the schedules you define for each subset.</p>
+
+<h2><a id='hive-queries'></a>HiveQL Queries</h2>
+
+<p><strong>To create a HiveQL Query: </strong></p>
+
+<ol>
+<li> Select <strong>Data Subsets</strong> from the left Navigation menu.</li>
+<li> Select  <strong>HiveQL Queries</strong>.</li>
+<li><p>Click <strong>New Query</strong>.</p>
+
+<p>A dialog box opens where you can define your query or aggregate:</p>
+
+<p><img src="images/define_query.png" /></p></li>
+<li><p>Drag one or more data sources from the Data list on the left into the Select Data Fields work area.</p></li>
+<li><p>Select the fields in each data source that you want to output in your query. </p>
+
+<p>Note that a Hive Query string is created in the <strong>Preview HiveQL</strong> box at the bottom of dialog box as you work with the data.</p></li>
+<li><p>(Optional) Join fields in the data base by selecting a field from one of the data sources and dragging it to a field in another data source that you want to join to the first field. </p>
+
+<p>A connector line displays showing the relationship of the fields and the fields are listed in the <strong>Refine Output</strong> table :</p>
+
+<p><img src="images/refine_query.png" /></p></li>
+<li><p>(Optional) In the <strong>Refine Output</strong> box, select a type of aggregation from the drop-down lists in the <strong>Aggregate</strong> field.</p>
+
+<ul>
+<li>For numeric data, you can chose COUNT, COUNT DISTINCT, AVG, MAX, MIN, or SUM.</li>
+<li>For string data, you can choose COUNT or COUNT DISTINCT.</li>
+</ul></li>
+<li><p>(Optional) Enter a display name for the field in the <strong>Display Name</strong> column.</p></li>
+<li><p>(Optional) Select a sorting option (ASC or DESC) from the drop-down list in the <strong>Order</strong> field.</p></li>
+<li><p>(Optional) Manually enter a <code>WHERE</code> clause in the <strong>Limit Criteria</strong> box. </p></li>
+<li><p>(Optional) Click <strong>Schedule</strong> and enter a schedule for when you want this query to run. Save the schedule when you are finished.</p></li>
+<li><p>Enter a name for your query. </p></li>
+<li><p>Click <strong>Save and Run</strong> to run the query now or click <strong>Save</strong> to run the query later.</p></li>
+</ol>
+
+<p><strong>Note:</strong> To use a HiveQL Query in a chart or report, you must reprocess any static data files. Streaming data will be processed by the query as it arrives or when you schedule the query to run. </p>
+
+<p>The new data subsets are now available in <strong>Canvas View</strong> for creating charts and reports. In <strong>Canvas View</strong>, click the down arrow in the <strong>Data Source</strong> list, select <strong>HiveQL Queries</strong> and then select your query from the list. </p>
+
+<h2><a id='summary-aggregates'></a>Summary Aggregates</h2>
+
+<p>Summary aggregates allow you to create a query that summarizes numeric fields. Summary aggregates are useful for large data sets where you do not need the ability to access the individual events. </p>
+
+<p><strong>To create a Summary Aggregate:</strong></p>
+
+<ol>
+<li> Select <strong>Data Subsets</strong> <strong>&gt; Summary Aggregates</strong> from the navigation menu. </li>
+<li><p>Click <strong>New Aggregate</strong>.</p>
+
+<p>The <strong>Aggregate Editor</strong> displays.</p></li>
+<li><p>Click <strong>Create Aggregate Definition</strong>.</p>
+
+<p>The <strong>Configure Aggregate Definition</strong> screen displays:</p>
+
+<p><img src="images/configure_aggregate.png" /> </p></li>
+<li><p>Enter a name for the aggregate.</p></li>
+<li><p>From the list of <strong>Data</strong> fields on the left, drag Measures or Dimensions into their corresponding boxes in the screen. </p></li>
+<li><p>If needed for your analysis, drag date files to the <strong>Summaries Timescales</strong> box. Select a frequency. </p>
+
+<p>You can select Yearly, Quarterly, Monthly, Weekly, or Daily. </p></li>
+<li><p>Click <strong>Save and Next</strong>.</p></li>
+<li><p>Click <strong>Next</strong>.</p></li>
+<li><p>Select the events to process for the aggregate. </p>
+
+<p>You can select <strong>Future events</strong> or Select <strong>Events within custom data range</strong>. </p></li>
+<li><p>Select a schedule option. You can choose from the following:</p>
+
+<ul>
+<li>  Real-time</li>
+<li>  Run-immediately</li>
+<li>  Daily</li>
+<li>  Weekly</li>
+<li>  Monthly</li>
+</ul></li>
+<li><p>Click <strong>Save</strong>.</p>
+
+<p>The <strong>Summary Aggregates</strong> page displays. You can see a list of the Summary Aggregates you defined.</p></li>
+<li><p>To edit the aggregate, hover over its name and click the edit icon.</p></li>
+<li><p>To delete the aggregate, hover over its name and click the trash icon. </p></li>
+<li><p>Click the aggregate name to toggle display of run statistics. In the <strong>Last Run</strong> section, you can view information on the last run of the aggregate. Click <strong>Details</strong> for detailed status. </p></li>
+</ol>
+
+<h2><a id='unique-aggregates></a>Unique Aggregates</h2>
+
+<p>Unique aggregates allow you to create a query that identifies the unique dimensions in the data. </p>
+
+<p><strong>To create a Unique Aggregate:</strong></p>
+
+<ol>
+<li> Select <strong>Data Subsets</strong> &gt; <strong>Unique Aggregates</strong> from the navigation menu. </li>
+<li><p>Click <strong>New Aggregate</strong>.</p>
+
+<p>The <strong>Aggregate Editor</strong> displays.</p></li>
+<li><p>Click <strong>Create Aggregate Definition</strong>.</p>
+
+<p>The <strong>Configure Aggregate Definition</strong> screen displays. </p></li>
+<li><p>Enter a name for the Aggregate.</p></li>
+<li><p>From the list of <strong>Data</strong> fields on the left, drag Measures or Dimensions into their corresponding boxes in the screen. </p></li>
+<li><p>If needed for your analysis, drag date files to the <strong>Uniques Timescales</strong> box. </p></li>
+<li><p>Select a frequency. You can select Yearly, Quarterly, Monthly, Weekly, or Daily. </p></li>
+<li><p>Click <strong>Save and Next</strong>.</p></li>
+<li><p>Click <strong>Next</strong>.</p></li>
+<li><p>Select the events to process for the aggregate. You can select <strong>Future events</strong> or Select <strong>Events within custom data range</strong>. </p></li>
+<li><p>Select a schedule option. You can choose from the following:</p>
+
+<ul>
+<li>  Real-time</li>
+<li>  Run-immediately</li>
+<li>  Daily</li>
+<li>  Weekly</li>
+<li>  Monthly</li>
+</ul></li>
+<li><p>Click <strong>Save</strong>.</p>
+
+<p>The <strong>Summary Aggregates</strong> page displays. You can see a list of the Summary Aggregates you defined.</p></li>
+<li><p>To edit the aggregate, hover over its name and click the edit icon.</p></li>
+<li><p>To delete the aggregate, hover over its name and click the trash icon. </p></li>
+<li><p>Click the aggregate name to toggle display of run statistics. In the <strong>Last Run</strong> section, you can view information on the last run of the aggregate. Click <strong>Details</strong> for detailed status. </p></li>
+</ol>
+
+
+        </div><!-- end of body-container content-->
+      </div><!-- end of container -->
+    </div><!--end of container-fluid-->
+  </div><!--end of main-wrap-->
+
+  <div class="site-footer desktop-only">
+      <div class="container-fluid">
+          <div class="site-footer-links">
+              <span class="version"><a href='/'>Pivotal Documentation</a></span>
+              <span>&copy;
+                  <script>
+                      var d = new Date();
+                      document.write(d.getFullYear());
+                  </script>
+                  <a href='http://gopivotal.com'>Pivotal Software</a> Inc. All Rights Reserved.
+              </span>
+          </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+      (function() {
+          var didInit = false;
+          function initMunchkin() {
+              if(didInit === false) {
+                  didInit = true;
+                  Munchkin.init('625-IUJ-009');
+              }
+          }
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+          s.onreadystatechange = function() {
+              if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                  initMunchkin();
+              }
+          };
+          s.onload = initMunchkin;
+          document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+  </script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39702075-1']);
+    _gaq.push(['_setDomainName', 'gopivotal.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>
